@@ -1,0 +1,11 @@
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.deps.json
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.runtimeconfig.json
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.runtimeconfig.dev.json
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.pdb
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.csproj.CoreCompileInputs.cache
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.AssemblyInfoInputs.cache
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.AssemblyInfo.cs
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.pdb
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.csprojResolveAssemblyReference.cache

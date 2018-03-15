@@ -1,0 +1,13 @@
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.csprojResolveAssemblyReference.cache
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.csproj.CoreCompileInputs.cache
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.AssemblyInfoInputs.cache
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.AssemblyInfo.cs
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.deps.json
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.pdb
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\EFTemplateCore.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\Modules.NorthWind.Domain.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\Modules.NorthWind.Domain.pdb
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\bin\Debug\netcoreapp2.0\EFTemplateCore.pdb
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.dll
+C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\Modules.NorthWind.Configuration\obj\Debug\netcoreapp2.0\Modules.NorthWind.Configuration.pdb
