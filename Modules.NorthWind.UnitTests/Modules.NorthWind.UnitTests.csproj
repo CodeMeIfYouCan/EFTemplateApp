@@ -20,6 +20,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore.UnitTests\EFTemplateCore.UnitTests.csproj" />
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Configuration\Modules.NorthWind.Configuration.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Data\Modules.NorthWind.Data.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Domain\Modules.NorthWind.Domain.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Interfaces\Modules.NorthWind.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="NorthWindUnitTests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NorthWindUnitTests.cs</LastGenOutput>

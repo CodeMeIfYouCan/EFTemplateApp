@@ -18,6 +18,7 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Configuration;
     using Modules.NorthWind.Domain;
     using Modules.NorthWind.Interfaces;
+    using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
     using System.Linq;
 

@@ -23,6 +23,11 @@ namespace EFTemplateCore
             context = new TContext();
         }
 
+        public BaseUnitOfWork(string connectionString)
+        {
+            context = (TContext)Activator.CreateInstance(typeof(TContext), connectionString);
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
         /// </summary>

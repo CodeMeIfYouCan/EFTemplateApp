@@ -960,7 +960,35 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // UnitOfWork
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
     public class UnitOfWork : BaseUnitOfWork<<#=Settings.DbContextName#>>, IUnitOfWork
-    {
+    {	    
+		public UnitOfWork()
+	    :base()
+        {
+        }
+
+	    public UnitOfWork(DbTransaction existingTransaction)
+	    :base(existingTransaction)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        public UnitOfWork(DbConnection existingConnection)
+		:base(existingConnection)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        public UnitOfWork(<#=Settings.DbContextName#> context)
+		:base(context)
+        {
+        }
+
 <#
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {

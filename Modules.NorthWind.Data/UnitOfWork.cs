@@ -18,11 +18,45 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Configuration;
     using Modules.NorthWind.Domain;
     using Modules.NorthWind.Interfaces;
+    using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
     // UnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public class UnitOfWork : BaseUnitOfWork<NorthWindContext>, IUnitOfWork
     {
+        public UnitOfWork()
+        : base()
+        {
+        }
+
+        public UnitOfWork(string connectionString)
+	    :base(connectionString)
+        {
+        }
+
+	    public UnitOfWork(DbTransaction existingTransaction)
+	    :base(existingTransaction)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        public UnitOfWork(DbConnection existingConnection)
+		:base(existingConnection)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        public UnitOfWork(NorthWindContext context)
+		:base(context)
+        {
+        }
+
 AlphabeticalListOfProductRepository _AlphabeticalListOfProductRepository;
 
 public AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository

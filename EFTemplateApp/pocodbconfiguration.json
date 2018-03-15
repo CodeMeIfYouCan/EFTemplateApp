@@ -3,7 +3,7 @@
     {
       "Code": "MyDbContext",
       "ProviderName": "System.Data.SqlClient",
-      "ConnectionString": "server=*****; user=*****; password=*****; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8"
+      "ConnectionString": "server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8"
     }
   ]
 }

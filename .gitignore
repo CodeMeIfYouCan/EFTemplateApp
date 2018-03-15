@@ -243,5 +243,3 @@ _Pvt_Extensions
 .fake/
 *.sdf
 
-# ignore dll files
-*.dll
