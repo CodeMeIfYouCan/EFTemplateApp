@@ -28,11 +28,14 @@ using Microsoft.EntityFrameworkCore;
         public float Discount { get; set; } // Discount (Primary key)
         public decimal? ExtendedPrice { get; set; } // ExtendedPrice
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public OrderDetailsExtended()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -23,11 +23,14 @@ using Microsoft.EntityFrameworkCore;
         public int ProductId { get; set; } // ProductID (Primary key)
         public string ProductName { get; set; } // ProductName (Primary key) (length: 40)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public CurrentProductList()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

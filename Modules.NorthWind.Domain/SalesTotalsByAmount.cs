@@ -25,11 +25,14 @@ using Microsoft.EntityFrameworkCore;
         public string CompanyName { get; set; } // CompanyName (Primary key) (length: 40)
         public System.DateTime? ShippedDate { get; set; } // ShippedDate
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public SalesTotalsByAmount()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -35,12 +35,7 @@ using Microsoft.EntityFrameworkCore;
         public string ShipPostalCode { get; set; } // ShipPostalCode (length: 10)
         public string ShipCountry { get; set; } // ShipCountry (length: 15)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child OrderDetails where [Order Details].[OrderID] point to this entity (FK_Order_Details_Orders)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<OrderDetail> OrderDetails { get; set; } // Order Details.FK_Order_Details_Orders
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
@@ -48,7 +43,7 @@ using Microsoft.EntityFrameworkCore;
         public Order()
         {
             Freight = 0m;
-            OrderDetails = new System.Collections.Generic.List<OrderDetail>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

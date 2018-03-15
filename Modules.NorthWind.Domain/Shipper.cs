@@ -24,19 +24,14 @@ using Microsoft.EntityFrameworkCore;
         public string CompanyName { get; set; } // CompanyName (length: 40)
         public string Phone { get; set; } // Phone (length: 24)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Orders where [Orders].[ShipVia] point to this entity (FK_Orders_Shippers)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Order> Orders { get; set; } // Orders.FK_Orders_Shippers
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Shipper()
         {
-            Orders = new System.Collections.Generic.List<Order>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

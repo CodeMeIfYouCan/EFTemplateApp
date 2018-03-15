@@ -25,19 +25,14 @@ using Microsoft.EntityFrameworkCore;
         public string Description { get; set; } // Description (length: 1073741823)
         public byte[] Picture { get; set; } // Picture (length: 2147483647)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Products where [Products].[CategoryID] point to this entity (FK_Products_Categories)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Product> Products { get; set; } // Products.FK_Products_Categories
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Category()
         {
-            Products = new System.Collections.Generic.List<Product>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -24,11 +24,14 @@ using Microsoft.EntityFrameworkCore;
         public int OrderId { get; set; } // OrderID (Primary key)
         public decimal? Subtotal { get; set; } // Subtotal
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public SummaryOfSalesByQuarter()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

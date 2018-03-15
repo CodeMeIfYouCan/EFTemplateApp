@@ -27,11 +27,14 @@ using Microsoft.EntityFrameworkCore;
         public string City { get; set; } // City (length: 15)
         public string Country { get; set; } // Country (length: 15)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public QuarterlyOrder()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

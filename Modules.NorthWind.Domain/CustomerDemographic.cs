@@ -23,19 +23,14 @@ using Microsoft.EntityFrameworkCore;
         public string CustomerTypeId { get; set; } // CustomerTypeID (Primary key) (length: 10)
         public string CustomerDesc { get; set; } // CustomerDesc (length: 1073741823)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Customers (Many-to-Many) mapped by table [CustomerCustomerDemo]
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Customer> Customers { get; set; } // Many to many mapping
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public CustomerDemographic()
         {
-            Customers = new System.Collections.Generic.List<Customer>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

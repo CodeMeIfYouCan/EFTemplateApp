@@ -31,7 +31,14 @@ namespace EFTemplateCore
         public GenericRepository(EFContext context)
         {
             this.context = context;
-            dbSet = context.Set<TEntity>();
+            try
+            {
+                dbSet = context.Set<TEntity>();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
             //SafeUtilities.SetConnectionString(context);
         }
 

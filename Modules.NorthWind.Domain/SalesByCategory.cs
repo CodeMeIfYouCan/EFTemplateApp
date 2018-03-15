@@ -25,11 +25,14 @@ using Microsoft.EntityFrameworkCore;
         public string ProductName { get; set; } // ProductName (Primary key) (length: 40)
         public decimal? ProductSales { get; set; } // ProductSales
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public SalesByCategory()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

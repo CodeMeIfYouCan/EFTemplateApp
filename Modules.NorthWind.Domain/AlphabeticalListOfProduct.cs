@@ -32,11 +32,14 @@ using Microsoft.EntityFrameworkCore;
         public bool Discontinued { get; set; } // Discontinued (Primary key)
         public string CategoryName { get; set; } // CategoryName (Primary key) (length: 15)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public AlphabeticalListOfProduct()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -32,24 +32,14 @@ using Microsoft.EntityFrameworkCore;
         public string Phone { get; set; } // Phone (length: 24)
         public string Fax { get; set; } // Fax (length: 24)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child CustomerDemographics (Many-to-Many) mapped by table [CustomerCustomerDemo]
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<CustomerDemographic> CustomerDemographics { get; set; } // Many to many mapping
-        /// <summary>
-        /// Child Orders where [Orders].[CustomerID] point to this entity (FK_Orders_Customers)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Order> Orders { get; set; } // Orders.FK_Orders_Customers
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Customer()
         {
-            Orders = new System.Collections.Generic.List<Order>();
-            CustomerDemographics = new System.Collections.Generic.List<CustomerDemographic>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

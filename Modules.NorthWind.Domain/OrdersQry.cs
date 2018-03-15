@@ -41,11 +41,14 @@ using Microsoft.EntityFrameworkCore;
         public string PostalCode { get; set; } // PostalCode (length: 10)
         public string Country { get; set; } // Country (length: 15)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public OrdersQry()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -31,12 +31,7 @@ using Microsoft.EntityFrameworkCore;
         public short? ReorderLevel { get; set; } // ReorderLevel
         public bool Discontinued { get; set; } // Discontinued
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child OrderDetails where [Order Details].[ProductID] point to this entity (FK_Order_Details_Products)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<OrderDetail> OrderDetails { get; set; } // Order Details.FK_Order_Details_Products
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
@@ -48,7 +43,7 @@ using Microsoft.EntityFrameworkCore;
             UnitsOnOrder = 0;
             ReorderLevel = 0;
             Discontinued = false;
-            OrderDetails = new System.Collections.Generic.List<OrderDetail>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

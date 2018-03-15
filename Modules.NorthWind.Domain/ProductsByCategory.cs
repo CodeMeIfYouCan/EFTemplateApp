@@ -26,11 +26,14 @@ using Microsoft.EntityFrameworkCore;
         public short? UnitsInStock { get; set; } // UnitsInStock
         public bool Discontinued { get; set; } // Discontinued (Primary key)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public ProductsByCategory()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

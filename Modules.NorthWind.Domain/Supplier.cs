@@ -33,19 +33,14 @@ using Microsoft.EntityFrameworkCore;
         public string Fax { get; set; } // Fax (length: 24)
         public string HomePage { get; set; } // HomePage (length: 1073741823)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Products where [Products].[SupplierID] point to this entity (FK_Products_Suppliers)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Product> Products { get; set; } // Products.FK_Products_Suppliers
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Supplier()
         {
-            Products = new System.Collections.Generic.List<Product>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

@@ -24,19 +24,14 @@ using Microsoft.EntityFrameworkCore;
         public string TerritoryDescription { get; set; } // TerritoryDescription (length: 50)
         public int RegionId { get; set; } // RegionID
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Employees (Many-to-Many) mapped by table [EmployeeTerritories]
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Employee> Employees { get; set; } // Many to many mapping
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Territory()
         {
-            Employees = new System.Collections.Generic.List<Employee>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

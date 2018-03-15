@@ -23,11 +23,14 @@ using Microsoft.EntityFrameworkCore;
         public string ProductName { get; set; } // ProductName (Primary key) (length: 40)
         public decimal? UnitPrice { get; set; } // UnitPrice
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public ProductsAboveAveragePrice()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

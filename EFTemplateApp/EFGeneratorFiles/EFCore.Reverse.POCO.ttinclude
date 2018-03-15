@@ -1043,31 +1043,8 @@ if(!tbl.HasPrimaryKey) { #>
 #>
 <#= WritePocoColumn(col) #>
 <# } #>
-<#
-if(tbl.ReverseNavigationProperty.Count() > 0)
-{
-#>
 
-<#if(Settings.IncludeComments != CommentsStyle.None){#>        // Reverse navigation
-
-<# } #>
-<#
-foreach(var s in tbl.ReverseNavigationProperty.OrderBy(x => x.Definition))
-{ #>
-<# if(Settings.IncludeComments != CommentsStyle.None){#>        /// <summary>
-        /// <#=s.Comments ?? "" #>
-        /// </summary>
-<# }
-   foreach (var rnpda in Settings.AdditionalReverseNavigationsDataAnnotations) {#>
-        [<#=rnpda #>]
-<# }
-   if (s.AdditionalDataAnnotations != null) {
-     foreach (var fkda in s.AdditionalDataAnnotations) {#>
-        [<#=fkda #>]
-<#   }
-   } #>
-        <#=s.Definition #>
-<# } } #>
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
@@ -1085,12 +1062,8 @@ foreach(var col in tbl.Columns.OrderBy(x => x.Ordinal).Where(c => c.Default != s
 #>
             <#=col.NameHumanCase #> = <#=col.Default #>;
 <# } #>
+//TODO: Deleted relational property creation rows.
 <#
-foreach(string s in tbl.ReverseNavigationCtor)
-{
-#>
-            <#=s #>
-<# }
 if(Settings.MakeClassesPartial) {#>
             InitializePartial();
 <#}#>        }

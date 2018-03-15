@@ -47,11 +47,14 @@ using Microsoft.EntityFrameworkCore;
         public decimal? ExtendedPrice { get; set; } // ExtendedPrice
         public decimal? Freight { get; set; } // Freight
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public Invoice()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

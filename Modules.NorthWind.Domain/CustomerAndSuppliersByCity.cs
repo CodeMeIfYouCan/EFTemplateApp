@@ -25,11 +25,14 @@ using Microsoft.EntityFrameworkCore;
         public string ContactName { get; set; } // ContactName (length: 30)
         public string Relationship { get; set; } // Relationship (Primary key) (length: 9)
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
         public CustomerAndSuppliersByCity()
         {
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

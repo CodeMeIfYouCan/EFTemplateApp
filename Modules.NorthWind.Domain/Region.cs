@@ -23,19 +23,14 @@ using Microsoft.EntityFrameworkCore;
         public int RegionId { get; set; } // RegionID (Primary key)
         public string RegionDescription { get; set; } // RegionDescription (length: 50)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Territories where [Territories].[RegionID] point to this entity (FK_Territories_Region)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Territory> Territories { get; set; } // Territories.FK_Territories_Region
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Region()
         {
-            Territories = new System.Collections.Generic.List<Territory>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

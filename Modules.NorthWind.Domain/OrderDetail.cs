@@ -26,6 +26,8 @@ using Microsoft.EntityFrameworkCore;
         public short Quantity { get; set; } // Quantity
         public float Discount { get; set; } // Discount
 
+//TODO: Deleted relational properties
+
 //TODO: Deleted foreign key rows from here
 
 
@@ -34,6 +36,7 @@ using Microsoft.EntityFrameworkCore;
             UnitPrice = 0m;
             Quantity = 1;
             Discount = 0f;
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 

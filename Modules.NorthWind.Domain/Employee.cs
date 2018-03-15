@@ -39,29 +39,14 @@ using Microsoft.EntityFrameworkCore;
         public int? ReportsTo { get; set; } // ReportsTo
         public string PhotoPath { get; set; } // PhotoPath (length: 255)
 
-        // Reverse navigation
-
-        /// <summary>
-        /// Child Employees where [Employees].[ReportsTo] point to this entity (FK_Employees_Employees)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Employee> Employees { get; set; } // Employees.FK_Employees_Employees
-        /// <summary>
-        /// Child Orders where [Orders].[EmployeeID] point to this entity (FK_Orders_Employees)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Order> Orders { get; set; } // Orders.FK_Orders_Employees
-        /// <summary>
-        /// Child Territories (Many-to-Many) mapped by table [EmployeeTerritories]
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<Territory> Territories { get; set; } // Many to many mapping
+//TODO: Deleted relational properties
 
 //TODO: Deleted foreign key rows from here
 
 
         public Employee()
         {
-            Employees = new System.Collections.Generic.List<Employee>();
-            Orders = new System.Collections.Generic.List<Order>();
-            Territories = new System.Collections.Generic.List<Territory>();
+//TODO: Deleted relational property creation rows.
             InitializePartial();
         }
 
