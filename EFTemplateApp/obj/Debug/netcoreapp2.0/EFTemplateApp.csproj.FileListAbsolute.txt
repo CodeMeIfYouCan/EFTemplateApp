@@ -9,3 +9,14 @@ C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug
 C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.dll
 C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.pdb
 C:\TfsOnline\PocoGenerator\EFPocoGenerator\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.csprojResolveAssemblyReference.cache
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.deps.json
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.runtimeconfig.json
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.runtimeconfig.dev.json
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\EFTemplateApp.pdb
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.csprojResolveAssemblyReference.cache
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.csproj.CoreCompileInputs.cache
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.AssemblyInfoInputs.cache
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.AssemblyInfo.cs
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\obj\Debug\netcoreapp2.0\EFTemplateApp.pdb
