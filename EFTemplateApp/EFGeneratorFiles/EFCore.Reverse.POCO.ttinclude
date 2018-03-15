@@ -966,6 +966,11 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // UnitOfWork
         {
         }
 
+		 public UnitOfWork(string connectionString)
+	    :base(connectionString)
+        {
+        }
+
 	    public UnitOfWork(DbTransaction existingTransaction)
 	    :base(existingTransaction)
         {

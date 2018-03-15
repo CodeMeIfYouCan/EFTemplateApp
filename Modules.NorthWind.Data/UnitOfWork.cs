@@ -23,13 +23,13 @@ using Microsoft.EntityFrameworkCore;
     // UnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public class UnitOfWork : BaseUnitOfWork<NorthWindContext>, IUnitOfWork
-    {
-        public UnitOfWork()
-        : base()
+    {	    
+		public UnitOfWork()
+	    :base()
         {
         }
 
-        public UnitOfWork(string connectionString)
+		 public UnitOfWork(string connectionString)
 	    :base(connectionString)
         {
         }
