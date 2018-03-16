@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Intertech.Pruva.Modules.CustomerBaseEntity.Enums {
-    public enum CustomerType {
+namespace Modules.NorthWind.Domain.Enums
+{
+    public enum CustomerType : int {
 
         /// <summary>
         /// Gerçek
@@ -25,11 +26,11 @@ namespace Intertech.Pruva.Modules.CustomerBaseEntity.Enums {
         /// <summary>
         /// Adi Ortaklık
         /// </summary>
-        CommonPartnership=5,
+        CommonPartnership = 5,
         /// <summary>
         /// Vesayete Tabi
         /// </summary>
-        SubjectToGuardianship =6,
+        SubjectToGuardianship = 6
 
     }
 }

@@ -5,7 +5,7 @@ Settings.ContextNamespace = "Modules.NorthWind.Data";
 Settings.UnitOfWorkNamespace = "Modules.NorthWind.Interfaces";
 Settings.PocoConfigurationNamespace = "Modules.NorthWind.Configuration";
 Settings.MakeClassesPartial = true;
-Settings.AdditionalNamespaces = new[] {  " EFTemplateCore.Interfaces" };  // To include extra namespaces, include them here. i.e. "Microsoft.AspNet.Identity.EntityFramework"
+Settings.AdditionalNamespaces = new[] {  " EFTemplateCore.Interfaces", "Modules.NorthWind.Domain.Enums" };  // To include extra namespaces, include them here. i.e. "Microsoft.AspNet.Identity.EntityFramework"
 Settings.ElementsToGenerate = Elements.Poco;
 Settings.ContextNamespace = "";
 #>

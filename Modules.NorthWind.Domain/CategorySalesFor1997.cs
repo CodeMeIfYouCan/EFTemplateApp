@@ -15,7 +15,8 @@
 namespace Modules.NorthWind.Domain
 {
     using  EFTemplateCore.Interfaces;
-using Microsoft.EntityFrameworkCore;
+    using Modules.NorthWind.Domain.Enums;
+	using Microsoft.EntityFrameworkCore;
     // Category Sales for 1997
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public partial class CategorySalesFor1997 : IEntity

@@ -15,7 +15,8 @@
 namespace Modules.NorthWind.Domain
 {
     using  EFTemplateCore.Interfaces;
-using Microsoft.EntityFrameworkCore;
+    using Modules.NorthWind.Domain.Enums;
+	using Microsoft.EntityFrameworkCore;
     // The table 'Quarterly Orders' is not usable by entity framework because it
     // does not have a primary key. It is listed here for completeness.
     // Quarterly Orders

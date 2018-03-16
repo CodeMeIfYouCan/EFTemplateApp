@@ -15,7 +15,8 @@
 namespace Modules.NorthWind.Domain
 {
     using  EFTemplateCore.Interfaces;
-using Microsoft.EntityFrameworkCore;
+    using Modules.NorthWind.Domain.Enums;
+	using Microsoft.EntityFrameworkCore;
     // Customers
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public partial class Customer : IEntity
@@ -31,6 +32,7 @@ using Microsoft.EntityFrameworkCore;
         public string Country { get; set; } // Country (length: 15)
         public string Phone { get; set; } // Phone (length: 24)
         public string Fax { get; set; } // Fax (length: 24)
+        public CustomerType? CustomerType { get; set; } // CustomerType
 
 //TODO: Deleted relational properties
 

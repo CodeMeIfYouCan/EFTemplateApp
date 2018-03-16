@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Intertech.Pruva.Modules.CustomerBaseData.Resources {
+namespace Modules.NorthWind.Data.Resources
+{
     using System;
     
     

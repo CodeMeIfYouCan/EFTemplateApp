@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using EFTemplateCore.Extensions;
+using Modules.NorthWind.Domain.Enums;
 
 namespace Modules.NorthWind.UnitTests
 {
@@ -25,7 +26,7 @@ namespace Modules.NorthWind.UnitTests
                             join o in orders.Table() on c.CustomerId equals o.CustomerId
                             join od in orderDetails.Table() on o.OrderId equals od.OrderId
                             join p in products.Table() on od.ProductId equals p.ProductId
-                            where p.CategoryId.Value > 1
+                            where c.CustomerType == CustomerType.Individual
                             orderby o.OrderId descending
                             orderby c.CompanyName ascending
                             select new CustomerOrderDetail()
