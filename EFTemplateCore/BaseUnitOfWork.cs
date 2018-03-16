@@ -9,11 +9,10 @@ using EFTemplateCore.Interfaces;
 
 namespace EFTemplateCore
 {
-    public abstract class BaseUnitOfWork<TContext> : IRepositoryFactory, IUnitOfWork<TContext>, IBaseUnitOfWork where TContext : EFContext, new()
+    public abstract class BaseUnitOfWork<TContext> : IUnitOfWork<TContext>, IBaseUnitOfWork where TContext : EFContext, new()
     {
         protected readonly TContext context;
         private bool disposed = false;
-        protected Dictionary<Type, object> genericRepositories;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
@@ -100,55 +99,12 @@ namespace EFTemplateCore
             {
                 if (disposing)
                 {
-                    // clear repositories
-                    if (genericRepositories != null)
-                    {
-                        genericRepositories.Clear();
-                    }
-
                     // dispose the db context.
                     context.Dispose();
                 }
             }
 
             disposed = true;
-        }
-        
-        /// <summary>
-        /// Gets the specified repository for the <typeparamref name="TEntity"/>.
-        /// </summary>
-        /// <typeparam name="TEntity">The type of the entity.</typeparam>
-        /// <returns>An instance of type inherited from <see cref="IRepository{TEntity}"/> interface.</returns>
-
-        public IRepository<TEntity> GetGenericRepository<TEntity>() where TEntity : class, IEntity, new()
-        {
-            //if (genericRepositories == null)
-            //{
-            //    genericRepositories = new Dictionary<Type, object>();
-            //}
-
-            //var type = typeof(TEntity);
-            //if (!genericRepositories.ContainsKey(type))
-            //{
-            //    genericRepositories[type] = new GenericRepository<TEntity>(context);
-            //}
-
-            //return (IRepository<TEntity>)genericRepositories[type];
-            return null;
-        }
-
-        protected void SetGenericRepository<TEntity>(GenericRepository<TEntity> genericRepository) where TEntity : class, IEntity, new()
-        {
-            if (genericRepositories == null)
-            {
-                genericRepositories = new Dictionary<Type, object>();
-            }
-
-            var type = typeof(TEntity);
-            if (!genericRepositories.ContainsKey(type))
-            {
-                genericRepositories[type] = genericRepository;
-            }
         }
     }
 }

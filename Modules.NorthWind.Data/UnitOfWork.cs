@@ -57,9 +57,8 @@ using Microsoft.EntityFrameworkCore;
         {
         }
 
-AlphabeticalListOfProductRepository _AlphabeticalListOfProductRepository;
-
-public AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository
+		AlphabeticalListOfProductRepository _AlphabeticalListOfProductRepository;
+		public AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository
         {
             get
             {
@@ -67,13 +66,12 @@ public AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository
                 {
                     _AlphabeticalListOfProductRepository  = new AlphabeticalListOfProductRepository(context);
                 }
-                SetGenericRepository<AlphabeticalListOfProduct>(_AlphabeticalListOfProductRepository);
                 return _AlphabeticalListOfProductRepository;
             }
         }
-CategoryRepository _CategoryRepository;
 
-public CategoryRepository CategoryRepository
+		CategoryRepository _CategoryRepository;
+		public CategoryRepository CategoryRepository
         {
             get
             {
@@ -81,13 +79,12 @@ public CategoryRepository CategoryRepository
                 {
                     _CategoryRepository  = new CategoryRepository(context);
                 }
-                SetGenericRepository<Category>(_CategoryRepository);
                 return _CategoryRepository;
             }
         }
-CategorySalesFor1997Repository _CategorySalesFor1997Repository;
 
-public CategorySalesFor1997Repository CategorySalesFor1997Repository
+		CategorySalesFor1997Repository _CategorySalesFor1997Repository;
+		public CategorySalesFor1997Repository CategorySalesFor1997Repository
         {
             get
             {
@@ -95,13 +92,12 @@ public CategorySalesFor1997Repository CategorySalesFor1997Repository
                 {
                     _CategorySalesFor1997Repository  = new CategorySalesFor1997Repository(context);
                 }
-                SetGenericRepository<CategorySalesFor1997>(_CategorySalesFor1997Repository);
                 return _CategorySalesFor1997Repository;
             }
         }
-CurrentProductListRepository _CurrentProductListRepository;
 
-public CurrentProductListRepository CurrentProductListRepository
+		CurrentProductListRepository _CurrentProductListRepository;
+		public CurrentProductListRepository CurrentProductListRepository
         {
             get
             {
@@ -109,13 +105,12 @@ public CurrentProductListRepository CurrentProductListRepository
                 {
                     _CurrentProductListRepository  = new CurrentProductListRepository(context);
                 }
-                SetGenericRepository<CurrentProductList>(_CurrentProductListRepository);
                 return _CurrentProductListRepository;
             }
         }
-CustomerRepository _CustomerRepository;
 
-public CustomerRepository CustomerRepository
+		CustomerRepository _CustomerRepository;
+		public CustomerRepository CustomerRepository
         {
             get
             {
@@ -123,13 +118,12 @@ public CustomerRepository CustomerRepository
                 {
                     _CustomerRepository  = new CustomerRepository(context);
                 }
-                SetGenericRepository<Customer>(_CustomerRepository);
                 return _CustomerRepository;
             }
         }
-CustomerAndSuppliersByCityRepository _CustomerAndSuppliersByCityRepository;
 
-public CustomerAndSuppliersByCityRepository CustomerAndSuppliersByCityRepository
+		CustomerAndSuppliersByCityRepository _CustomerAndSuppliersByCityRepository;
+		public CustomerAndSuppliersByCityRepository CustomerAndSuppliersByCityRepository
         {
             get
             {
@@ -137,13 +131,12 @@ public CustomerAndSuppliersByCityRepository CustomerAndSuppliersByCityRepository
                 {
                     _CustomerAndSuppliersByCityRepository  = new CustomerAndSuppliersByCityRepository(context);
                 }
-                SetGenericRepository<CustomerAndSuppliersByCity>(_CustomerAndSuppliersByCityRepository);
                 return _CustomerAndSuppliersByCityRepository;
             }
         }
-CustomerDemographicRepository _CustomerDemographicRepository;
 
-public CustomerDemographicRepository CustomerDemographicRepository
+		CustomerDemographicRepository _CustomerDemographicRepository;
+		public CustomerDemographicRepository CustomerDemographicRepository
         {
             get
             {
@@ -151,13 +144,12 @@ public CustomerDemographicRepository CustomerDemographicRepository
                 {
                     _CustomerDemographicRepository  = new CustomerDemographicRepository(context);
                 }
-                SetGenericRepository<CustomerDemographic>(_CustomerDemographicRepository);
                 return _CustomerDemographicRepository;
             }
         }
-EmployeeRepository _EmployeeRepository;
 
-public EmployeeRepository EmployeeRepository
+		EmployeeRepository _EmployeeRepository;
+		public EmployeeRepository EmployeeRepository
         {
             get
             {
@@ -165,13 +157,12 @@ public EmployeeRepository EmployeeRepository
                 {
                     _EmployeeRepository  = new EmployeeRepository(context);
                 }
-                SetGenericRepository<Employee>(_EmployeeRepository);
                 return _EmployeeRepository;
             }
         }
-InvoiceRepository _InvoiceRepository;
 
-public InvoiceRepository InvoiceRepository
+		InvoiceRepository _InvoiceRepository;
+		public InvoiceRepository InvoiceRepository
         {
             get
             {
@@ -179,13 +170,12 @@ public InvoiceRepository InvoiceRepository
                 {
                     _InvoiceRepository  = new InvoiceRepository(context);
                 }
-                SetGenericRepository<Invoice>(_InvoiceRepository);
                 return _InvoiceRepository;
             }
         }
-OrderRepository _OrderRepository;
 
-public OrderRepository OrderRepository
+		OrderRepository _OrderRepository;
+		public OrderRepository OrderRepository
         {
             get
             {
@@ -193,13 +183,12 @@ public OrderRepository OrderRepository
                 {
                     _OrderRepository  = new OrderRepository(context);
                 }
-                SetGenericRepository<Order>(_OrderRepository);
                 return _OrderRepository;
             }
         }
-OrderDetailRepository _OrderDetailRepository;
 
-public OrderDetailRepository OrderDetailRepository
+		OrderDetailRepository _OrderDetailRepository;
+		public OrderDetailRepository OrderDetailRepository
         {
             get
             {
@@ -207,13 +196,12 @@ public OrderDetailRepository OrderDetailRepository
                 {
                     _OrderDetailRepository  = new OrderDetailRepository(context);
                 }
-                SetGenericRepository<OrderDetail>(_OrderDetailRepository);
                 return _OrderDetailRepository;
             }
         }
-OrderDetailsExtendedRepository _OrderDetailsExtendedRepository;
 
-public OrderDetailsExtendedRepository OrderDetailsExtendedRepository
+		OrderDetailsExtendedRepository _OrderDetailsExtendedRepository;
+		public OrderDetailsExtendedRepository OrderDetailsExtendedRepository
         {
             get
             {
@@ -221,13 +209,12 @@ public OrderDetailsExtendedRepository OrderDetailsExtendedRepository
                 {
                     _OrderDetailsExtendedRepository  = new OrderDetailsExtendedRepository(context);
                 }
-                SetGenericRepository<OrderDetailsExtended>(_OrderDetailsExtendedRepository);
                 return _OrderDetailsExtendedRepository;
             }
         }
-OrdersQryRepository _OrdersQryRepository;
 
-public OrdersQryRepository OrdersQryRepository
+		OrdersQryRepository _OrdersQryRepository;
+		public OrdersQryRepository OrdersQryRepository
         {
             get
             {
@@ -235,13 +222,12 @@ public OrdersQryRepository OrdersQryRepository
                 {
                     _OrdersQryRepository  = new OrdersQryRepository(context);
                 }
-                SetGenericRepository<OrdersQry>(_OrdersQryRepository);
                 return _OrdersQryRepository;
             }
         }
-OrderSubtotalRepository _OrderSubtotalRepository;
 
-public OrderSubtotalRepository OrderSubtotalRepository
+		OrderSubtotalRepository _OrderSubtotalRepository;
+		public OrderSubtotalRepository OrderSubtotalRepository
         {
             get
             {
@@ -249,13 +235,12 @@ public OrderSubtotalRepository OrderSubtotalRepository
                 {
                     _OrderSubtotalRepository  = new OrderSubtotalRepository(context);
                 }
-                SetGenericRepository<OrderSubtotal>(_OrderSubtotalRepository);
                 return _OrderSubtotalRepository;
             }
         }
-ProductRepository _ProductRepository;
 
-public ProductRepository ProductRepository
+		ProductRepository _ProductRepository;
+		public ProductRepository ProductRepository
         {
             get
             {
@@ -263,13 +248,12 @@ public ProductRepository ProductRepository
                 {
                     _ProductRepository  = new ProductRepository(context);
                 }
-                SetGenericRepository<Product>(_ProductRepository);
                 return _ProductRepository;
             }
         }
-ProductsAboveAveragePriceRepository _ProductsAboveAveragePriceRepository;
 
-public ProductsAboveAveragePriceRepository ProductsAboveAveragePriceRepository
+		ProductsAboveAveragePriceRepository _ProductsAboveAveragePriceRepository;
+		public ProductsAboveAveragePriceRepository ProductsAboveAveragePriceRepository
         {
             get
             {
@@ -277,13 +261,12 @@ public ProductsAboveAveragePriceRepository ProductsAboveAveragePriceRepository
                 {
                     _ProductsAboveAveragePriceRepository  = new ProductsAboveAveragePriceRepository(context);
                 }
-                SetGenericRepository<ProductsAboveAveragePrice>(_ProductsAboveAveragePriceRepository);
                 return _ProductsAboveAveragePriceRepository;
             }
         }
-ProductSalesFor1997Repository _ProductSalesFor1997Repository;
 
-public ProductSalesFor1997Repository ProductSalesFor1997Repository
+		ProductSalesFor1997Repository _ProductSalesFor1997Repository;
+		public ProductSalesFor1997Repository ProductSalesFor1997Repository
         {
             get
             {
@@ -291,13 +274,12 @@ public ProductSalesFor1997Repository ProductSalesFor1997Repository
                 {
                     _ProductSalesFor1997Repository  = new ProductSalesFor1997Repository(context);
                 }
-                SetGenericRepository<ProductSalesFor1997>(_ProductSalesFor1997Repository);
                 return _ProductSalesFor1997Repository;
             }
         }
-ProductsByCategoryRepository _ProductsByCategoryRepository;
 
-public ProductsByCategoryRepository ProductsByCategoryRepository
+		ProductsByCategoryRepository _ProductsByCategoryRepository;
+		public ProductsByCategoryRepository ProductsByCategoryRepository
         {
             get
             {
@@ -305,13 +287,12 @@ public ProductsByCategoryRepository ProductsByCategoryRepository
                 {
                     _ProductsByCategoryRepository  = new ProductsByCategoryRepository(context);
                 }
-                SetGenericRepository<ProductsByCategory>(_ProductsByCategoryRepository);
                 return _ProductsByCategoryRepository;
             }
         }
-QuarterlyOrderRepository _QuarterlyOrderRepository;
 
-public QuarterlyOrderRepository QuarterlyOrderRepository
+		QuarterlyOrderRepository _QuarterlyOrderRepository;
+		public QuarterlyOrderRepository QuarterlyOrderRepository
         {
             get
             {
@@ -319,13 +300,12 @@ public QuarterlyOrderRepository QuarterlyOrderRepository
                 {
                     _QuarterlyOrderRepository  = new QuarterlyOrderRepository(context);
                 }
-                SetGenericRepository<QuarterlyOrder>(_QuarterlyOrderRepository);
                 return _QuarterlyOrderRepository;
             }
         }
-RegionRepository _RegionRepository;
 
-public RegionRepository RegionRepository
+		RegionRepository _RegionRepository;
+		public RegionRepository RegionRepository
         {
             get
             {
@@ -333,13 +313,12 @@ public RegionRepository RegionRepository
                 {
                     _RegionRepository  = new RegionRepository(context);
                 }
-                SetGenericRepository<Region>(_RegionRepository);
                 return _RegionRepository;
             }
         }
-SalesByCategoryRepository _SalesByCategoryRepository;
 
-public SalesByCategoryRepository SalesByCategoryRepository
+		SalesByCategoryRepository _SalesByCategoryRepository;
+		public SalesByCategoryRepository SalesByCategoryRepository
         {
             get
             {
@@ -347,13 +326,12 @@ public SalesByCategoryRepository SalesByCategoryRepository
                 {
                     _SalesByCategoryRepository  = new SalesByCategoryRepository(context);
                 }
-                SetGenericRepository<SalesByCategory>(_SalesByCategoryRepository);
                 return _SalesByCategoryRepository;
             }
         }
-SalesTotalsByAmountRepository _SalesTotalsByAmountRepository;
 
-public SalesTotalsByAmountRepository SalesTotalsByAmountRepository
+		SalesTotalsByAmountRepository _SalesTotalsByAmountRepository;
+		public SalesTotalsByAmountRepository SalesTotalsByAmountRepository
         {
             get
             {
@@ -361,13 +339,12 @@ public SalesTotalsByAmountRepository SalesTotalsByAmountRepository
                 {
                     _SalesTotalsByAmountRepository  = new SalesTotalsByAmountRepository(context);
                 }
-                SetGenericRepository<SalesTotalsByAmount>(_SalesTotalsByAmountRepository);
                 return _SalesTotalsByAmountRepository;
             }
         }
-ShipperRepository _ShipperRepository;
 
-public ShipperRepository ShipperRepository
+		ShipperRepository _ShipperRepository;
+		public ShipperRepository ShipperRepository
         {
             get
             {
@@ -375,13 +352,12 @@ public ShipperRepository ShipperRepository
                 {
                     _ShipperRepository  = new ShipperRepository(context);
                 }
-                SetGenericRepository<Shipper>(_ShipperRepository);
                 return _ShipperRepository;
             }
         }
-SummaryOfSalesByQuarterRepository _SummaryOfSalesByQuarterRepository;
 
-public SummaryOfSalesByQuarterRepository SummaryOfSalesByQuarterRepository
+		SummaryOfSalesByQuarterRepository _SummaryOfSalesByQuarterRepository;
+		public SummaryOfSalesByQuarterRepository SummaryOfSalesByQuarterRepository
         {
             get
             {
@@ -389,13 +365,12 @@ public SummaryOfSalesByQuarterRepository SummaryOfSalesByQuarterRepository
                 {
                     _SummaryOfSalesByQuarterRepository  = new SummaryOfSalesByQuarterRepository(context);
                 }
-                SetGenericRepository<SummaryOfSalesByQuarter>(_SummaryOfSalesByQuarterRepository);
                 return _SummaryOfSalesByQuarterRepository;
             }
         }
-SummaryOfSalesByYearRepository _SummaryOfSalesByYearRepository;
 
-public SummaryOfSalesByYearRepository SummaryOfSalesByYearRepository
+		SummaryOfSalesByYearRepository _SummaryOfSalesByYearRepository;
+		public SummaryOfSalesByYearRepository SummaryOfSalesByYearRepository
         {
             get
             {
@@ -403,13 +378,12 @@ public SummaryOfSalesByYearRepository SummaryOfSalesByYearRepository
                 {
                     _SummaryOfSalesByYearRepository  = new SummaryOfSalesByYearRepository(context);
                 }
-                SetGenericRepository<SummaryOfSalesByYear>(_SummaryOfSalesByYearRepository);
                 return _SummaryOfSalesByYearRepository;
             }
         }
-SupplierRepository _SupplierRepository;
 
-public SupplierRepository SupplierRepository
+		SupplierRepository _SupplierRepository;
+		public SupplierRepository SupplierRepository
         {
             get
             {
@@ -417,13 +391,12 @@ public SupplierRepository SupplierRepository
                 {
                     _SupplierRepository  = new SupplierRepository(context);
                 }
-                SetGenericRepository<Supplier>(_SupplierRepository);
                 return _SupplierRepository;
             }
         }
-TerritoryRepository _TerritoryRepository;
 
-public TerritoryRepository TerritoryRepository
+		TerritoryRepository _TerritoryRepository;
+		public TerritoryRepository TerritoryRepository
         {
             get
             {
@@ -431,10 +404,10 @@ public TerritoryRepository TerritoryRepository
                 {
                     _TerritoryRepository  = new TerritoryRepository(context);
                 }
-                SetGenericRepository<Territory>(_TerritoryRepository);
                 return _TerritoryRepository;
             }
         }
+
 }
 }
 // </auto-generated>
