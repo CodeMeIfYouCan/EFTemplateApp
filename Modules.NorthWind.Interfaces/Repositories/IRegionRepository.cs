@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // RegionRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IRegionRepository<Region> : IRepository<Region> where Region : class, IEntity, new()
-{
-    Region GetRegionByKey(int RegionId);
-}
+	public interface IRegionRepository<Region> : IRepository<Region> where Region : class, IEntity, new()
+	{
+		Region GetRegionByKey(int RegionId);
+	}
 }
 // </auto-generated>

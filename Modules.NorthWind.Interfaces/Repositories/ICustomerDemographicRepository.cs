@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // CustomerDemographicsRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface ICustomerDemographicRepository<CustomerDemographic> : IRepository<CustomerDemographic> where CustomerDemographic : class, IEntity, new()
-{
-    CustomerDemographic GetCustomerDemographicByKey(string CustomerTypeId);
-}
+	public interface ICustomerDemographicRepository<CustomerDemographic> : IRepository<CustomerDemographic> where CustomerDemographic : class, IEntity, new()
+	{
+		CustomerDemographic GetCustomerDemographicByKey(string CustomerTypeId);
+	}
 }
 // </auto-generated>

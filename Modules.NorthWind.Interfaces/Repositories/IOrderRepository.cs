@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // OrdersRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IOrderRepository<Order> : IRepository<Order> where Order : class, IEntity, new()
-{
-    Order GetOrderByKey(int OrderId);
-}
+	public interface IOrderRepository<Order> : IRepository<Order> where Order : class, IEntity, new()
+	{
+		Order GetOrderByKey(int OrderId);
+	}
 }
 // </auto-generated>

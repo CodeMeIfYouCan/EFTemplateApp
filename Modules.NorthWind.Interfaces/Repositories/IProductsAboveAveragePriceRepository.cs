@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Products Above Average PriceRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IProductsAboveAveragePriceRepository<ProductsAboveAveragePrice> : IRepository<ProductsAboveAveragePrice> where ProductsAboveAveragePrice : class, IEntity, new()
-{
-    ProductsAboveAveragePrice GetProductsAboveAveragePriceByKey(string ProductName);
-}
+	public interface IProductsAboveAveragePriceRepository<ProductsAboveAveragePrice> : IRepository<ProductsAboveAveragePrice> where ProductsAboveAveragePrice : class, IEntity, new()
+	{
+		ProductsAboveAveragePrice GetProductsAboveAveragePriceByKey(string ProductName);
+	}
 }
 // </auto-generated>

@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Alphabetical list of productsRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IAlphabeticalListOfProductRepository<AlphabeticalListOfProduct> : IRepository<AlphabeticalListOfProduct> where AlphabeticalListOfProduct : class, IEntity, new()
-{
-    AlphabeticalListOfProduct GetAlphabeticalListOfProductByKey(int ProductId, string ProductName, bool Discontinued, string CategoryName);
-}
+	public interface IAlphabeticalListOfProductRepository<AlphabeticalListOfProduct> : IRepository<AlphabeticalListOfProduct> where AlphabeticalListOfProduct : class, IEntity, new()
+	{
+		AlphabeticalListOfProduct GetAlphabeticalListOfProductByKey(int ProductId, string ProductName, bool Discontinued, string CategoryName);
+	}
 }
 // </auto-generated>

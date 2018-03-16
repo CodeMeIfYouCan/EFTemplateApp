@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // TerritoriesRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface ITerritoryRepository<Territory> : IRepository<Territory> where Territory : class, IEntity, new()
-{
-    Territory GetTerritoryByKey(string TerritoryId);
-}
+	public interface ITerritoryRepository<Territory> : IRepository<Territory> where Territory : class, IEntity, new()
+	{
+		Territory GetTerritoryByKey(string TerritoryId);
+	}
 }
 // </auto-generated>

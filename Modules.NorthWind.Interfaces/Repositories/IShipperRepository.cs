@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // ShippersRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IShipperRepository<Shipper> : IRepository<Shipper> where Shipper : class, IEntity, new()
-{
-    Shipper GetShipperByKey(int ShipperId);
-}
+	public interface IShipperRepository<Shipper> : IRepository<Shipper> where Shipper : class, IEntity, new()
+	{
+		Shipper GetShipperByKey(int ShipperId);
+	}
 }
 // </auto-generated>

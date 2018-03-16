@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Order SubtotalsRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IOrderSubtotalRepository<OrderSubtotal> : IRepository<OrderSubtotal> where OrderSubtotal : class, IEntity, new()
-{
-    OrderSubtotal GetOrderSubtotalByKey(int OrderId);
-}
+	public interface IOrderSubtotalRepository<OrderSubtotal> : IRepository<OrderSubtotal> where OrderSubtotal : class, IEntity, new()
+	{
+		OrderSubtotal GetOrderSubtotalByKey(int OrderId);
+	}
 }
 // </auto-generated>

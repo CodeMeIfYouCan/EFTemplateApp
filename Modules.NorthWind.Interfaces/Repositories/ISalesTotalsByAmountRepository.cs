@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Sales Totals by AmountRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface ISalesTotalsByAmountRepository<SalesTotalsByAmount> : IRepository<SalesTotalsByAmount> where SalesTotalsByAmount : class, IEntity, new()
-{
-    SalesTotalsByAmount GetSalesTotalsByAmountByKey(int OrderId, string CompanyName);
-}
+	public interface ISalesTotalsByAmountRepository<SalesTotalsByAmount> : IRepository<SalesTotalsByAmount> where SalesTotalsByAmount : class, IEntity, new()
+	{
+		SalesTotalsByAmount GetSalesTotalsByAmountByKey(int OrderId, string CompanyName);
+	}
 }
 // </auto-generated>

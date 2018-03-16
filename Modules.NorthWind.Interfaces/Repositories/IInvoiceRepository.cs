@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // InvoicesRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IInvoiceRepository<Invoice> : IRepository<Invoice> where Invoice : class, IEntity, new()
-{
-    Invoice GetInvoiceByKey(string CustomerName, string Salesperson, int OrderId, string ShipperName, int ProductId, string ProductName, decimal UnitPrice, short Quantity, float Discount);
-}
+	public interface IInvoiceRepository<Invoice> : IRepository<Invoice> where Invoice : class, IEntity, new()
+	{
+		Invoice GetInvoiceByKey(string CustomerName, string Salesperson, int OrderId, string ShipperName, int ProductId, string ProductName, decimal UnitPrice, short Quantity, float Discount);
+	}
 }
 // </auto-generated>

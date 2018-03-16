@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Summary of Sales by YearRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface ISummaryOfSalesByYearRepository<SummaryOfSalesByYear> : IRepository<SummaryOfSalesByYear> where SummaryOfSalesByYear : class, IEntity, new()
-{
-    SummaryOfSalesByYear GetSummaryOfSalesByYearByKey(int OrderId);
-}
+	public interface ISummaryOfSalesByYearRepository<SummaryOfSalesByYear> : IRepository<SummaryOfSalesByYear> where SummaryOfSalesByYear : class, IEntity, new()
+	{
+		SummaryOfSalesByYear GetSummaryOfSalesByYearByKey(int OrderId);
+	}
 }
 // </auto-generated>

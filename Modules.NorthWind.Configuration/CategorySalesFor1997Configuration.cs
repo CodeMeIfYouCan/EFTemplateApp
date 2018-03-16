@@ -15,8 +15,8 @@
 namespace Modules.NorthWind.Configuration
 {
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+	using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore.Metadata.Builders;
     // Category Sales for 1997
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public  class CategorySalesFor1997Configuration : IEntityTypeConfiguration<CategorySalesFor1997>

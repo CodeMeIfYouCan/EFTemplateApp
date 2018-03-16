@@ -15,8 +15,8 @@
 namespace Modules.NorthWind.Configuration
 {
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+	using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore.Metadata.Builders;
     // Shippers
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public  class ShipperConfiguration : IEntityTypeConfiguration<Shipper>

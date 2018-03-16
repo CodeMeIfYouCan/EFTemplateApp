@@ -16,11 +16,11 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Quarterly OrdersRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface IQuarterlyOrderRepository<QuarterlyOrder> : IRepository<QuarterlyOrder> where QuarterlyOrder : class, IEntity, new()
-{
-}
+	public interface IQuarterlyOrderRepository<QuarterlyOrder> : IRepository<QuarterlyOrder> where QuarterlyOrder : class, IEntity, new()
+	{
+	}
 }
 // </auto-generated>

@@ -16,12 +16,12 @@ namespace Modules.NorthWind.Interfaces
 {
     using EFTemplateCore.Interfaces;
     using Modules.NorthWind.Domain;
-using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     // Current Product ListRepository
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-public interface ICurrentProductListRepository<CurrentProductList> : IRepository<CurrentProductList> where CurrentProductList : class, IEntity, new()
-{
-    CurrentProductList GetCurrentProductListByKey(int ProductId, string ProductName);
-}
+	public interface ICurrentProductListRepository<CurrentProductList> : IRepository<CurrentProductList> where CurrentProductList : class, IEntity, new()
+	{
+		CurrentProductList GetCurrentProductListByKey(int ProductId, string ProductName);
+	}
 }
 // </auto-generated>
