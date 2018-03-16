@@ -57,354 +57,354 @@ using Microsoft.EntityFrameworkCore;
         {
         }
 
-		AlphabeticalListOfProductRepository _AlphabeticalListOfProductRepository;
+		AlphabeticalListOfProductRepository alphabeticalListOfProductRepository;
 		public AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository
         {
             get
             {
-                if (_AlphabeticalListOfProductRepository == null)
+                if (alphabeticalListOfProductRepository == null)
                 {
-                    _AlphabeticalListOfProductRepository  = new AlphabeticalListOfProductRepository(context);
+                    alphabeticalListOfProductRepository  = new AlphabeticalListOfProductRepository(context);
                 }
-                return _AlphabeticalListOfProductRepository;
+                return alphabeticalListOfProductRepository;
             }
         }
 
-		CategoryRepository _CategoryRepository;
+		CategoryRepository categoryRepository;
 		public CategoryRepository CategoryRepository
         {
             get
             {
-                if (_CategoryRepository == null)
+                if (categoryRepository == null)
                 {
-                    _CategoryRepository  = new CategoryRepository(context);
+                    categoryRepository  = new CategoryRepository(context);
                 }
-                return _CategoryRepository;
+                return categoryRepository;
             }
         }
 
-		CategorySalesFor1997Repository _CategorySalesFor1997Repository;
+		CategorySalesFor1997Repository categorySalesFor1997Repository;
 		public CategorySalesFor1997Repository CategorySalesFor1997Repository
         {
             get
             {
-                if (_CategorySalesFor1997Repository == null)
+                if (categorySalesFor1997Repository == null)
                 {
-                    _CategorySalesFor1997Repository  = new CategorySalesFor1997Repository(context);
+                    categorySalesFor1997Repository  = new CategorySalesFor1997Repository(context);
                 }
-                return _CategorySalesFor1997Repository;
+                return categorySalesFor1997Repository;
             }
         }
 
-		CurrentProductListRepository _CurrentProductListRepository;
+		CurrentProductListRepository currentProductListRepository;
 		public CurrentProductListRepository CurrentProductListRepository
         {
             get
             {
-                if (_CurrentProductListRepository == null)
+                if (currentProductListRepository == null)
                 {
-                    _CurrentProductListRepository  = new CurrentProductListRepository(context);
+                    currentProductListRepository  = new CurrentProductListRepository(context);
                 }
-                return _CurrentProductListRepository;
+                return currentProductListRepository;
             }
         }
 
-		CustomerRepository _CustomerRepository;
+		CustomerRepository customerRepository;
 		public CustomerRepository CustomerRepository
         {
             get
             {
-                if (_CustomerRepository == null)
+                if (customerRepository == null)
                 {
-                    _CustomerRepository  = new CustomerRepository(context);
+                    customerRepository  = new CustomerRepository(context);
                 }
-                return _CustomerRepository;
+                return customerRepository;
             }
         }
 
-		CustomerAndSuppliersByCityRepository _CustomerAndSuppliersByCityRepository;
+		CustomerAndSuppliersByCityRepository customerAndSuppliersByCityRepository;
 		public CustomerAndSuppliersByCityRepository CustomerAndSuppliersByCityRepository
         {
             get
             {
-                if (_CustomerAndSuppliersByCityRepository == null)
+                if (customerAndSuppliersByCityRepository == null)
                 {
-                    _CustomerAndSuppliersByCityRepository  = new CustomerAndSuppliersByCityRepository(context);
+                    customerAndSuppliersByCityRepository  = new CustomerAndSuppliersByCityRepository(context);
                 }
-                return _CustomerAndSuppliersByCityRepository;
+                return customerAndSuppliersByCityRepository;
             }
         }
 
-		CustomerDemographicRepository _CustomerDemographicRepository;
+		CustomerDemographicRepository customerDemographicRepository;
 		public CustomerDemographicRepository CustomerDemographicRepository
         {
             get
             {
-                if (_CustomerDemographicRepository == null)
+                if (customerDemographicRepository == null)
                 {
-                    _CustomerDemographicRepository  = new CustomerDemographicRepository(context);
+                    customerDemographicRepository  = new CustomerDemographicRepository(context);
                 }
-                return _CustomerDemographicRepository;
+                return customerDemographicRepository;
             }
         }
 
-		EmployeeRepository _EmployeeRepository;
+		EmployeeRepository employeeRepository;
 		public EmployeeRepository EmployeeRepository
         {
             get
             {
-                if (_EmployeeRepository == null)
+                if (employeeRepository == null)
                 {
-                    _EmployeeRepository  = new EmployeeRepository(context);
+                    employeeRepository  = new EmployeeRepository(context);
                 }
-                return _EmployeeRepository;
+                return employeeRepository;
             }
         }
 
-		InvoiceRepository _InvoiceRepository;
+		InvoiceRepository invoiceRepository;
 		public InvoiceRepository InvoiceRepository
         {
             get
             {
-                if (_InvoiceRepository == null)
+                if (invoiceRepository == null)
                 {
-                    _InvoiceRepository  = new InvoiceRepository(context);
+                    invoiceRepository  = new InvoiceRepository(context);
                 }
-                return _InvoiceRepository;
+                return invoiceRepository;
             }
         }
 
-		OrderRepository _OrderRepository;
+		OrderRepository orderRepository;
 		public OrderRepository OrderRepository
         {
             get
             {
-                if (_OrderRepository == null)
+                if (orderRepository == null)
                 {
-                    _OrderRepository  = new OrderRepository(context);
+                    orderRepository  = new OrderRepository(context);
                 }
-                return _OrderRepository;
+                return orderRepository;
             }
         }
 
-		OrderDetailRepository _OrderDetailRepository;
+		OrderDetailRepository orderDetailRepository;
 		public OrderDetailRepository OrderDetailRepository
         {
             get
             {
-                if (_OrderDetailRepository == null)
+                if (orderDetailRepository == null)
                 {
-                    _OrderDetailRepository  = new OrderDetailRepository(context);
+                    orderDetailRepository  = new OrderDetailRepository(context);
                 }
-                return _OrderDetailRepository;
+                return orderDetailRepository;
             }
         }
 
-		OrderDetailsExtendedRepository _OrderDetailsExtendedRepository;
+		OrderDetailsExtendedRepository orderDetailsExtendedRepository;
 		public OrderDetailsExtendedRepository OrderDetailsExtendedRepository
         {
             get
             {
-                if (_OrderDetailsExtendedRepository == null)
+                if (orderDetailsExtendedRepository == null)
                 {
-                    _OrderDetailsExtendedRepository  = new OrderDetailsExtendedRepository(context);
+                    orderDetailsExtendedRepository  = new OrderDetailsExtendedRepository(context);
                 }
-                return _OrderDetailsExtendedRepository;
+                return orderDetailsExtendedRepository;
             }
         }
 
-		OrdersQryRepository _OrdersQryRepository;
+		OrdersQryRepository ordersQryRepository;
 		public OrdersQryRepository OrdersQryRepository
         {
             get
             {
-                if (_OrdersQryRepository == null)
+                if (ordersQryRepository == null)
                 {
-                    _OrdersQryRepository  = new OrdersQryRepository(context);
+                    ordersQryRepository  = new OrdersQryRepository(context);
                 }
-                return _OrdersQryRepository;
+                return ordersQryRepository;
             }
         }
 
-		OrderSubtotalRepository _OrderSubtotalRepository;
+		OrderSubtotalRepository orderSubtotalRepository;
 		public OrderSubtotalRepository OrderSubtotalRepository
         {
             get
             {
-                if (_OrderSubtotalRepository == null)
+                if (orderSubtotalRepository == null)
                 {
-                    _OrderSubtotalRepository  = new OrderSubtotalRepository(context);
+                    orderSubtotalRepository  = new OrderSubtotalRepository(context);
                 }
-                return _OrderSubtotalRepository;
+                return orderSubtotalRepository;
             }
         }
 
-		ProductRepository _ProductRepository;
+		ProductRepository productRepository;
 		public ProductRepository ProductRepository
         {
             get
             {
-                if (_ProductRepository == null)
+                if (productRepository == null)
                 {
-                    _ProductRepository  = new ProductRepository(context);
+                    productRepository  = new ProductRepository(context);
                 }
-                return _ProductRepository;
+                return productRepository;
             }
         }
 
-		ProductsAboveAveragePriceRepository _ProductsAboveAveragePriceRepository;
+		ProductsAboveAveragePriceRepository productsAboveAveragePriceRepository;
 		public ProductsAboveAveragePriceRepository ProductsAboveAveragePriceRepository
         {
             get
             {
-                if (_ProductsAboveAveragePriceRepository == null)
+                if (productsAboveAveragePriceRepository == null)
                 {
-                    _ProductsAboveAveragePriceRepository  = new ProductsAboveAveragePriceRepository(context);
+                    productsAboveAveragePriceRepository  = new ProductsAboveAveragePriceRepository(context);
                 }
-                return _ProductsAboveAveragePriceRepository;
+                return productsAboveAveragePriceRepository;
             }
         }
 
-		ProductSalesFor1997Repository _ProductSalesFor1997Repository;
+		ProductSalesFor1997Repository productSalesFor1997Repository;
 		public ProductSalesFor1997Repository ProductSalesFor1997Repository
         {
             get
             {
-                if (_ProductSalesFor1997Repository == null)
+                if (productSalesFor1997Repository == null)
                 {
-                    _ProductSalesFor1997Repository  = new ProductSalesFor1997Repository(context);
+                    productSalesFor1997Repository  = new ProductSalesFor1997Repository(context);
                 }
-                return _ProductSalesFor1997Repository;
+                return productSalesFor1997Repository;
             }
         }
 
-		ProductsByCategoryRepository _ProductsByCategoryRepository;
+		ProductsByCategoryRepository productsByCategoryRepository;
 		public ProductsByCategoryRepository ProductsByCategoryRepository
         {
             get
             {
-                if (_ProductsByCategoryRepository == null)
+                if (productsByCategoryRepository == null)
                 {
-                    _ProductsByCategoryRepository  = new ProductsByCategoryRepository(context);
+                    productsByCategoryRepository  = new ProductsByCategoryRepository(context);
                 }
-                return _ProductsByCategoryRepository;
+                return productsByCategoryRepository;
             }
         }
 
-		QuarterlyOrderRepository _QuarterlyOrderRepository;
+		QuarterlyOrderRepository quarterlyOrderRepository;
 		public QuarterlyOrderRepository QuarterlyOrderRepository
         {
             get
             {
-                if (_QuarterlyOrderRepository == null)
+                if (quarterlyOrderRepository == null)
                 {
-                    _QuarterlyOrderRepository  = new QuarterlyOrderRepository(context);
+                    quarterlyOrderRepository  = new QuarterlyOrderRepository(context);
                 }
-                return _QuarterlyOrderRepository;
+                return quarterlyOrderRepository;
             }
         }
 
-		RegionRepository _RegionRepository;
+		RegionRepository regionRepository;
 		public RegionRepository RegionRepository
         {
             get
             {
-                if (_RegionRepository == null)
+                if (regionRepository == null)
                 {
-                    _RegionRepository  = new RegionRepository(context);
+                    regionRepository  = new RegionRepository(context);
                 }
-                return _RegionRepository;
+                return regionRepository;
             }
         }
 
-		SalesByCategoryRepository _SalesByCategoryRepository;
+		SalesByCategoryRepository salesByCategoryRepository;
 		public SalesByCategoryRepository SalesByCategoryRepository
         {
             get
             {
-                if (_SalesByCategoryRepository == null)
+                if (salesByCategoryRepository == null)
                 {
-                    _SalesByCategoryRepository  = new SalesByCategoryRepository(context);
+                    salesByCategoryRepository  = new SalesByCategoryRepository(context);
                 }
-                return _SalesByCategoryRepository;
+                return salesByCategoryRepository;
             }
         }
 
-		SalesTotalsByAmountRepository _SalesTotalsByAmountRepository;
+		SalesTotalsByAmountRepository salesTotalsByAmountRepository;
 		public SalesTotalsByAmountRepository SalesTotalsByAmountRepository
         {
             get
             {
-                if (_SalesTotalsByAmountRepository == null)
+                if (salesTotalsByAmountRepository == null)
                 {
-                    _SalesTotalsByAmountRepository  = new SalesTotalsByAmountRepository(context);
+                    salesTotalsByAmountRepository  = new SalesTotalsByAmountRepository(context);
                 }
-                return _SalesTotalsByAmountRepository;
+                return salesTotalsByAmountRepository;
             }
         }
 
-		ShipperRepository _ShipperRepository;
+		ShipperRepository shipperRepository;
 		public ShipperRepository ShipperRepository
         {
             get
             {
-                if (_ShipperRepository == null)
+                if (shipperRepository == null)
                 {
-                    _ShipperRepository  = new ShipperRepository(context);
+                    shipperRepository  = new ShipperRepository(context);
                 }
-                return _ShipperRepository;
+                return shipperRepository;
             }
         }
 
-		SummaryOfSalesByQuarterRepository _SummaryOfSalesByQuarterRepository;
+		SummaryOfSalesByQuarterRepository summaryOfSalesByQuarterRepository;
 		public SummaryOfSalesByQuarterRepository SummaryOfSalesByQuarterRepository
         {
             get
             {
-                if (_SummaryOfSalesByQuarterRepository == null)
+                if (summaryOfSalesByQuarterRepository == null)
                 {
-                    _SummaryOfSalesByQuarterRepository  = new SummaryOfSalesByQuarterRepository(context);
+                    summaryOfSalesByQuarterRepository  = new SummaryOfSalesByQuarterRepository(context);
                 }
-                return _SummaryOfSalesByQuarterRepository;
+                return summaryOfSalesByQuarterRepository;
             }
         }
 
-		SummaryOfSalesByYearRepository _SummaryOfSalesByYearRepository;
+		SummaryOfSalesByYearRepository summaryOfSalesByYearRepository;
 		public SummaryOfSalesByYearRepository SummaryOfSalesByYearRepository
         {
             get
             {
-                if (_SummaryOfSalesByYearRepository == null)
+                if (summaryOfSalesByYearRepository == null)
                 {
-                    _SummaryOfSalesByYearRepository  = new SummaryOfSalesByYearRepository(context);
+                    summaryOfSalesByYearRepository  = new SummaryOfSalesByYearRepository(context);
                 }
-                return _SummaryOfSalesByYearRepository;
+                return summaryOfSalesByYearRepository;
             }
         }
 
-		SupplierRepository _SupplierRepository;
+		SupplierRepository supplierRepository;
 		public SupplierRepository SupplierRepository
         {
             get
             {
-                if (_SupplierRepository == null)
+                if (supplierRepository == null)
                 {
-                    _SupplierRepository  = new SupplierRepository(context);
+                    supplierRepository  = new SupplierRepository(context);
                 }
-                return _SupplierRepository;
+                return supplierRepository;
             }
         }
 
-		TerritoryRepository _TerritoryRepository;
+		TerritoryRepository territoryRepository;
 		public TerritoryRepository TerritoryRepository
         {
             get
             {
-                if (_TerritoryRepository == null)
+                if (territoryRepository == null)
                 {
-                    _TerritoryRepository  = new TerritoryRepository(context);
+                    territoryRepository  = new TerritoryRepository(context);
                 }
-                return _TerritoryRepository;
+                return territoryRepository;
             }
         }
 

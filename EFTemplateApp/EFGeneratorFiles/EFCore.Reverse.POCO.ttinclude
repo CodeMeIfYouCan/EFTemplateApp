@@ -997,16 +997,16 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // UnitOfWork
 <#
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {
-#>		<#=tbl.NameHumanCaseWithSuffix#>Repository _<#=tbl.NameHumanCaseWithSuffix#>Repository;
+#>		<#=tbl.NameHumanCaseWithSuffix#>Repository <#=StringHelper.ConvertToCamelCaseFromPascalCase(tbl.NameHumanCaseWithSuffix + "Repository")#>;
 		public <#=tbl.NameHumanCaseWithSuffix#>Repository <#=tbl.NameHumanCaseWithSuffix#>Repository
         {
             get
             {
-                if (_<#=tbl.NameHumanCaseWithSuffix#>Repository == null)
+                if (<#=StringHelper.ConvertToCamelCaseFromPascalCase(tbl.NameHumanCaseWithSuffix + "Repository")#> == null)
                 {
-                    _<#=tbl.NameHumanCaseWithSuffix#>Repository  = new <#=tbl.NameHumanCaseWithSuffix#>Repository(context);
+                    <#=StringHelper.ConvertToCamelCaseFromPascalCase(tbl.NameHumanCaseWithSuffix + "Repository")#>  = new <#=tbl.NameHumanCaseWithSuffix#>Repository(context);
                 }
-                return _<#=tbl.NameHumanCaseWithSuffix#>Repository;
+                return <#=StringHelper.ConvertToCamelCaseFromPascalCase(tbl.NameHumanCaseWithSuffix + "Repository")#>;
             }
         }
 

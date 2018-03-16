@@ -15,16 +15,19 @@ namespace Modules.NorthWind.UnitTests
         public void Test1()
         {
             IUnitOfWork unitOfWork = new UnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
-            
+
             CustomerRepository customers = unitOfWork.CustomerRepository;
             OrderRepository orders = unitOfWork.OrderRepository;
             OrderDetailRepository orderDetails = unitOfWork.OrderDetailRepository;
             ProductRepository products = unitOfWork.ProductRepository;
 
-            var testQuery = from c in customers.All()
-                            join o in orders.All() on c.CustomerId equals o.CustomerId
-                            join od in orderDetails.All() on o.OrderId equals od.OrderId
-                            join p in products.All() on od.ProductId equals p.ProductId
+            var testQuery = from c in customers.Table()
+                            join o in orders.Table() on c.CustomerId equals o.CustomerId
+                            join od in orderDetails.Table() on o.OrderId equals od.OrderId
+                            join p in products.Table() on od.ProductId equals p.ProductId
+                            where p.CategoryId.Value > 1
+                            orderby o.OrderId descending
+                            orderby c.CompanyName ascending
                             select new CustomerOrderDetail()
                             {
                                 OrderId = o.OrderId,
@@ -40,9 +43,14 @@ namespace Modules.NorthWind.UnitTests
                                 RequiredDate = o.RequiredDate,
                                 ShippedDate = o.ShippedDate
                             };
-
-            List<CustomerOrderDetail> customerOrderDetails =  testQuery.Top(10).ToList();
-            
+            try
+            {
+                List<CustomerOrderDetail> customerOrderDetails = testQuery.Top(1000).NoLock().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             Assert.IsTrue(1 == 1);
         }
         

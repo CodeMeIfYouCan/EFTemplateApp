@@ -11,7 +11,7 @@ namespace EFTemplateCore.Interfaces
          IQueryable<TEntity> AsQueryable();
          int Count();
          int Count(Expression<Func<TEntity, bool>> predicate);
-         IQueryable<TEntity> All();
+         IQueryable<TEntity> Table();
          IQueryable<TEntity> Filter(Expression<Func<TEntity, bool>> predicate);
          IQueryable<TEntity> Pagination(Expression<Func<TEntity, bool>> filter, out int total, int pageIndex = 0, int pageSize = 50, int minPage = 1, int maxPage = int.MaxValue);
          IQueryable<TEntity> Top(int size = 50);

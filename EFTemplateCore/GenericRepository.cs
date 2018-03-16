@@ -47,7 +47,7 @@ namespace EFTemplateCore
         {
             return dbSet.Count(predicate);
         }
-        public IQueryable<TEntity> All()
+        public IQueryable<TEntity> Table()
         {
             return dbSet.AsQueryable<TEntity>();
         }

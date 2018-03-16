@@ -3832,4 +3832,15 @@ SELECT  SERVERPROPERTY('Edition') AS Edition,
         public string ProviderName { get; set; }
         public string ConnectionString { get; set; }
     }
+
+	public static class StringHelper
+	{
+	    public static string ConvertToCamelCaseFromPascalCase(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return text;
+            string firstChar = text.Substring(0, 1);
+            text = string.Concat(firstChar.ToLower(new System.Globalization.CultureInfo("en-US")), text.Substring(1));
+            return text;
+        }
+	}
 #>
