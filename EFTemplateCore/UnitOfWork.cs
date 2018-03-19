@@ -9,29 +9,29 @@ using EFTemplateCore.Interfaces;
 
 namespace EFTemplateCore
 {
-    public abstract class BaseUnitOfWork<TContext> : IUnitOfWork<TContext>, IBaseUnitOfWork where TContext : EFContext, new()
+    public abstract class UnitOfWork<TContext> : IUnitOfWork<TContext>, IBaseUnitOfWork where TContext : EFContext, new()
     {
         protected readonly TContext context;
         private bool disposed = false;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
-        public BaseUnitOfWork()
+        public UnitOfWork()
         {
             context = new TContext();
         }
 
-        public BaseUnitOfWork(string connectionString)
+        public UnitOfWork(string connectionString)
         {
             context = (TContext)Activator.CreateInstance(typeof(TContext), connectionString);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public BaseUnitOfWork(DbTransaction existingTransaction)
+        public UnitOfWork(DbTransaction existingTransaction)
         {
             DbConnection dbConnection = existingTransaction.Connection;
             context = (TContext)Activator.CreateInstance(typeof(TContext), dbConnection);
@@ -39,19 +39,19 @@ namespace EFTemplateCore
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public BaseUnitOfWork(DbConnection existingConnection)
+        public UnitOfWork(DbConnection existingConnection)
         {
             context = (TContext)Activator.CreateInstance(typeof(TContext), existingConnection);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public BaseUnitOfWork(TContext context)
+        public UnitOfWork(TContext context)
         {
             context = context ?? throw new ArgumentNullException(nameof(context));
         }

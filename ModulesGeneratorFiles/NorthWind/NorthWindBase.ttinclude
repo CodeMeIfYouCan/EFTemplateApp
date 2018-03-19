@@ -13,6 +13,7 @@
     // Settings.ConnectionString = "Data Source=(local);Initial Catalog=Northwind;Integrated Security=True;Application Name=EntityFramework Reverse POCO Generator";
     // Settings.ProviderName = "System.Data.SqlClient";
 
+	Settings.ModuleName = "";
     Settings.Namespace = DefaultNamespace; // Override the default namespace here
     Settings.DbContextName = "EFContext"; // Note: If generating separate files, please give the db context a different name from this tt filename.
     //Settings.DbContextInterfaceName = "IMyDbContext"; // Defaults to "I" + DbContextName or set string empty to not implement any interface.

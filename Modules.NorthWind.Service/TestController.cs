@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EFTemplateCore.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Modules.NorthWind.BusinessLogic;
+using Modules.NorthWind.Data;
+using Modules.NorthWind.Domain.Enums;
+using Modules.NorthWind.ViewModels;
 
-namespace EFTemplateApp.Controllers
+namespace Modules.NorthWind.Service
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class TestController : Controller
     {
+        SampleBusinessCode sampleBusinessCode = new SampleBusinessCode();
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<CustomerOrderDetail> Get()
         {
-            return new string[] { "value1", "value2" };
+            List<CustomerOrderDetail> result = sampleBusinessCode.GetCustomerOrderDetails();
+            return result;
         }
 
         // GET api/values/5

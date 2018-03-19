@@ -71,7 +71,7 @@
         public static string ProviderName;
         public static string Namespace;
 		public static int CommandTimeout = 0;
-
+		
         public static bool IncludeViews;
         public static bool IncludeSynonyms;
         public static bool IncludeStoredProcedures;
@@ -156,6 +156,8 @@
         public static bool IncludeCodeGeneratedAttribute;
         public static Tables Tables;
         public static List<StoredProcedure> StoredProcs;
+
+		public static string ModuleName;
 
         public static Elements ElementsToGenerate;
         public static string PocoNamespace, ContextNamespace, UnitOfWorkNamespace, PocoConfigurationNamespace;

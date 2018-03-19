@@ -79,18 +79,21 @@ class Manager {
         }
     }
 
-    protected virtual void CreateFile(String fileName, String content, bool checkFileExists) {
+    protected virtual void CreateFile(String filePath, String content, bool checkFileExists) {
 		
         if(checkFileExists)
 		{
-			if (File.Exists(fileName))
+			if (File.Exists(filePath))
 			{
-				
 				return;
 			}
         }
-		if (IsFileContentDifferent(fileName, content))
-            File.WriteAllText(fileName, content);
+		if (IsFileContentDifferent(filePath, content))
+		{
+			FileInfo file = new System.IO.FileInfo(filePath);
+			file.Directory.Create(); // If the directory already exists, this method does nothing.
+			File.WriteAllText(file.FullName, content);
+		}
     }
 
     public virtual String GetCustomToolNamespace(String fileName) {

@@ -20,9 +20,9 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
-    // IUnitOfWork
+    // INorthWindUnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public interface IUnitOfWork  : System.IDisposable //TODO:   IBaseUnitOfWork can be added for access base unit of work 
+    public interface INorthWindUnitOfWork  : System.IDisposable //TODO:   IUnitOfWork can be added for access base unit of work 
     {
 		AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository { get; }
 		CategoryRepository CategoryRepository { get; }

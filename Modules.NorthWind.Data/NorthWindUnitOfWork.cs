@@ -20,41 +20,39 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
-    using EFTemplateCore.EFDbConnection;
-
-    // UnitOfWork
+    // NorthWindUnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public class UnitOfWork : BaseUnitOfWork<NorthWindContext>, IUnitOfWork
-    {
-        
-        public UnitOfWork()
+    public class NorthWindUnitOfWork : UnitOfWork<NorthWindContext>, INorthWindUnitOfWork
+    {	    
+		public NorthWindUnitOfWork()
 	    :base()
         {
         }
-        public UnitOfWork(string connectionName)
-        : base(connectionName)
+
+		 public NorthWindUnitOfWork(string connectionString)
+	    :base(connectionString)
         {
         }
 
-	    public UnitOfWork(DbTransaction existingTransaction)
+	    public NorthWindUnitOfWork(DbTransaction existingTransaction)
 	    :base(existingTransaction)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public UnitOfWork(DbConnection existingConnection)
+        public NorthWindUnitOfWork(DbConnection existingConnection)
 		:base(existingConnection)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public UnitOfWork(NorthWindContext context)
+        public NorthWindUnitOfWork(NorthWindContext context)
 		:base(context)
         {
         }

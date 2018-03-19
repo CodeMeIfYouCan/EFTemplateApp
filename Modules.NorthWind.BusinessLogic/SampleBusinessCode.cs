@@ -1,29 +1,27 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using EFTemplateCore.Extensions;
 using Modules.NorthWind.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using EFTemplateCore.Extensions;
 using Modules.NorthWind.Domain.Enums;
 using Modules.NorthWind.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Modules.NorthWind.UnitTests
+
+namespace Modules.NorthWind.BusinessLogic
 {
-    [TestClass]
-    public class Test
+    public class SampleBusinessCode
     {
-        [TestMethod()]
-        public void Test1()
+        public List<CustomerOrderDetail> GetCustomerOrderDetails()
         {
-            INorthWindUnitOfWork unitOfWork = new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
+            INorthWindUnitOfWork nUof = new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
+            List<CustomerOrderDetail> result = new List<CustomerOrderDetail>();
+            CustomerRepository customers = nUof.CustomerRepository;
+            OrderRepository orders = nUof.OrderRepository;
+            OrderDetailRepository orderDetails = nUof.OrderDetailRepository;
+            ProductRepository products = nUof.ProductRepository;
 
-            CustomerRepository customers = unitOfWork.CustomerRepository;
-            OrderRepository orders = unitOfWork.OrderRepository;
-            OrderDetailRepository orderDetails = unitOfWork.OrderDetailRepository;
-            ProductRepository products = unitOfWork.ProductRepository;
-
-            var testQuery = from c in customers.Table()
+            var testQuery = from c in customers.AsQueryable()
                             join o in orders.Table() on c.CustomerId equals o.CustomerId
                             join od in orderDetails.Table() on o.OrderId equals od.OrderId
                             join p in products.Table() on od.ProductId equals p.ProductId
@@ -45,9 +43,9 @@ namespace Modules.NorthWind.UnitTests
                                 RequiredDate = o.RequiredDate,
                                 ShippedDate = o.ShippedDate
                             };
-            List<CustomerOrderDetail> customerOrderDetails = testQuery.Top(1000).NoLock().ToList();
-            Assert.IsTrue(1 == 1);
+
+            result = testQuery.Top(1000).NoLock().ToList();
+            return result;
         }
-        
     }
 }
