@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Modules.NorthWind.Data;
+using Modules.NorthWind.Interfaces;
 
 namespace EFTemplateApp
 {
@@ -22,6 +24,7 @@ namespace EFTemplateApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<INorthWindUnitOfWork>(s => new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8"));
             services.AddMvc();
         }
 

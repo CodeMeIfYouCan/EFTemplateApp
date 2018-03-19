@@ -937,13 +937,13 @@ public class <#=tbl.NameHumanCaseWithSuffix#>Repository : GenericRepository<<#=t
 <#
 }
 
-fileManager.StartNewFile("Interfaces\\IUnitOfWork.cs");
+fileManager.StartNewFile("Interfaces\\I" + Settings.ModuleName + "UnitOfWork.cs");
 
-if(Settings.IncludeComments != CommentsStyle.None){#>    // IUnitOfWork
+if(Settings.IncludeComments != CommentsStyle.None){#>    // I<#=Settings.ModuleName#>UnitOfWork
 <# } #>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
-    public interface IUnitOfWork  : System.IDisposable //TODO:   IBaseUnitOfWork can be added for access base unit of work 
+    public interface I<#=Settings.ModuleName#>UnitOfWork  : System.IDisposable //TODO:   IUnitOfWork can be added for access base unit of work 
     {
 	<#
 		foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
@@ -953,43 +953,43 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // IUnitOfWork
 	}#>}
 <#
 
-fileManager.StartNewFile("UnitOfWork.cs");
+fileManager.StartNewFile(Settings.ModuleName + "UnitOfWork.cs");
 
-if(Settings.IncludeComments != CommentsStyle.None){#>    // UnitOfWork
+if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=Settings.ModuleName#>UnitOfWork
 <# } #>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
-    public class UnitOfWork : BaseUnitOfWork<<#=Settings.DbContextName#>>, IUnitOfWork
+    public class <#=Settings.ModuleName#>UnitOfWork : UnitOfWork<<#=Settings.DbContextName#>>, I<#=Settings.ModuleName#>UnitOfWork
     {	    
-		public UnitOfWork()
+		public <#=Settings.ModuleName#>UnitOfWork()
 	    :base()
         {
         }
 
-		 public UnitOfWork(string connectionString)
+		 public <#=Settings.ModuleName#>UnitOfWork(string connectionString)
 	    :base(connectionString)
         {
         }
 
-	    public UnitOfWork(DbTransaction existingTransaction)
+	    public <#=Settings.ModuleName#>UnitOfWork(DbTransaction existingTransaction)
 	    :base(existingTransaction)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public UnitOfWork(DbConnection existingConnection)
+        public <#=Settings.ModuleName#>UnitOfWork(DbConnection existingConnection)
 		:base(existingConnection)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseUnitOfWork{TContext}"/> class.
+        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public UnitOfWork(<#=Settings.DbContextName#> context)
+        public <#=Settings.ModuleName#>UnitOfWork(<#=Settings.DbContextName#> context)
 		:base(context)
         {
         }
