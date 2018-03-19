@@ -1,4 +1,5 @@
 ﻿using EFTemplateCore.EFDbConnection;
+using EFTemplateCore.EFDbConnection.JsonDbConnectionProvider;
 using EFTemplateCore.EFLogging;
 using EFTemplateCore.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -28,9 +29,10 @@ namespace EFTemplateCore
             this.dbConnection = dbConnection;
         }
 
-        public EFContext(string connectionString)
+        public EFContext(string connectionName)
         {
-            this.connectionString = connectionString;
+            JsonDbConnectionProvider jsonDbConnectionProvider = new JsonDbConnectionProvider(connectionName);
+            this.connectionString = jsonDbConnectionProvider.GetConnectionString();
         }
 
         public EFContext(IEFDbConnectionProvider connectionProvider)

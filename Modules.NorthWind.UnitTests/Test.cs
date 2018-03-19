@@ -15,7 +15,7 @@ namespace Modules.NorthWind.UnitTests
         [TestMethod()]
         public void Test1()
         {
-            IUnitOfWork unitOfWork = new UnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
+            IUnitOfWork unitOfWork = new UnitOfWork("NorthWindConnection");
 
             CustomerRepository customers = unitOfWork.CustomerRepository;
             OrderRepository orders = unitOfWork.OrderRepository;

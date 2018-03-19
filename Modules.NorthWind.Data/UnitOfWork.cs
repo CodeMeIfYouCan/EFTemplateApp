@@ -20,17 +20,19 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
+    using EFTemplateCore.EFDbConnection;
+
     // UnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
     public class UnitOfWork : BaseUnitOfWork<NorthWindContext>, IUnitOfWork
-    {	    
-		public UnitOfWork()
+    {
+        
+        public UnitOfWork()
 	    :base()
         {
         }
-
-		 public UnitOfWork(string connectionString)
-	    :base(connectionString)
+        public UnitOfWork(string connectionName)
+        : base(connectionName)
         {
         }
 

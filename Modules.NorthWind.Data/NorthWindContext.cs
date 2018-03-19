@@ -57,10 +57,10 @@ namespace Modules.NorthWind.Data
             InitializePartial();
         }
 		string connectionString = "";
-        public NorthWindContext(string connectionString)
+        public NorthWindContext(string connectionName)
+            :base(connectionName)
         {
             InitializePartial();
-		    this.connectionString = connectionString;
         }
 
 

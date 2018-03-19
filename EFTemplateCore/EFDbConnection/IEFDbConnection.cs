@@ -5,6 +5,6 @@ namespace EFTemplateCore.EFDbConnection
     public interface IEFDbConnectionProvider
     {
         string GetConnectionString();
-        int GetTimeOut();
+        T GetConnectionProperty<T>(string propertyName);
     }
 }
