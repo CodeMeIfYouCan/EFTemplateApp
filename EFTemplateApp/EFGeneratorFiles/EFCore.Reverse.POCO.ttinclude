@@ -1023,7 +1023,7 @@ foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {
 #>
-<# fileManager.StartNewFile(tbl.NameHumanCaseWithSuffix + Settings.FileExtension);
+<# fileManager.StartNewFile("Entities\\" + tbl.NameHumanCaseWithSuffix + Settings.FileExtension);
 if(!tbl.HasPrimaryKey) { #>
     // The table '<#=tbl.Name#>' is not usable by entity framework because it
     // does not have a primary key. It is listed here for completeness.

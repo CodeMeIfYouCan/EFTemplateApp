@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore.UnitTests\EFTemplateCore.UnitTests.csproj" />
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Configuration\Modules.NorthWind.Configuration.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Data\Modules.NorthWind.Data.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Domain\Modules.NorthWind.Domain.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Interfaces\Modules.NorthWind.Interfaces.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.UnitTests\Modules.NorthWind.UnitTests.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

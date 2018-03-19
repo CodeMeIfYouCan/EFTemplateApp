@@ -24,7 +24,6 @@ namespace EFTemplateApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<INorthWindUnitOfWork>(s => new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8"));
             services.AddMvc();
         }
 

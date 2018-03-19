@@ -1,27 +1,21 @@
-﻿using System;
+﻿using EFTemplateCore.Extensions;
+using Modules.NorthWind.Data;
+using Modules.NorthWind.Domain.Enums;
+using Modules.NorthWind.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EFTemplateCore.Extensions;
-using Microsoft.AspNetCore.Mvc;
-using Modules.NorthWind.Data;
-using Modules.NorthWind.Domain.Enums;
-using static Modules.NorthWind.UnitTests.Test;
 
-namespace EFTemplateApp.Controllers
+
+namespace Modules.NorthWind.BusinessLogic
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class SampleBusinessCode
     {
-        readonly INorthWindUnitOfWork nUof;
-        public ValuesController(INorthWindUnitOfWork unitOfWork)
+        public List<CustomerOrderDetail> GetCustomerOrderDetails()
         {
-            this.nUof = unitOfWork;
-        }
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
+            INorthWindUnitOfWork nUof = new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
+            List<CustomerOrderDetail> result = new List<CustomerOrderDetail>();
             CustomerRepository customers = nUof.CustomerRepository;
             OrderRepository orders = nUof.OrderRepository;
             OrderDetailRepository orderDetails = nUof.OrderDetailRepository;
@@ -49,41 +43,9 @@ namespace EFTemplateApp.Controllers
                                 RequiredDate = o.RequiredDate,
                                 ShippedDate = o.ShippedDate
                             };
-            try
-            {
-                List<CustomerOrderDetail> customerOrderDetails = testQuery.Top(1000).NoLock().ToList();
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
 
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            result = testQuery.Top(1000).NoLock().ToList();
+            return result;
         }
     }
 }

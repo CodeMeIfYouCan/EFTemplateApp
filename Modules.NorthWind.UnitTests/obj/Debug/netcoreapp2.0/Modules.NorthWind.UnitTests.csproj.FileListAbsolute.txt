@@ -38,3 +38,5 @@ C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcor
 C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcoreapp2.0\Modules.NorthWind.Data.pdb
 C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcoreapp2.0\Modules.NorthWind.Domain.pdb
 C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcoreapp2.0\Modules.NorthWind.Interfaces.pdb
+C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcoreapp2.0\Modules.NorthWind.ViewModels.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\Modules.NorthWind.UnitTests\bin\Debug\netcoreapp2.0\Modules.NorthWind.ViewModels.pdb

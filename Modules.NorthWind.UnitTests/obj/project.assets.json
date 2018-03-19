@@ -4816,7 +4816,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -5155,7 +5155,8 @@
           "MSTest.TestAdapter": "1.2.0",
           "MSTest.TestFramework": "1.2.0",
           "Microsoft.NET.Test.Sdk": "15.5.0",
-          "Microsoft.NETCore.App": "2.0.0"
+          "Microsoft.NETCore.App": "2.0.0",
+          "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
           "bin/placeholder/EFTemplateCore.UnitTests.dll": {}
@@ -5228,6 +5229,16 @@
         },
         "runtime": {
           "bin/placeholder/Modules.NorthWind.Interfaces.dll": {}
+        }
+      },
+      "Modules.NorthWind.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Modules.NorthWind.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.NorthWind.ViewModels.dll": {}
         }
       }
     }
@@ -13671,6 +13682,11 @@
       "type": "project",
       "path": "../Modules.NorthWind.Interfaces/Modules.NorthWind.Interfaces.csproj",
       "msbuildProject": "../Modules.NorthWind.Interfaces/Modules.NorthWind.Interfaces.csproj"
+    },
+    "Modules.NorthWind.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../Modules.NorthWind.ViewModels/Modules.NorthWind.ViewModels.csproj",
+      "msbuildProject": "../Modules.NorthWind.ViewModels/Modules.NorthWind.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13684,7 +13700,8 @@
       "Modules.NorthWind.Configuration >= 1.0.0",
       "Modules.NorthWind.Data >= 1.0.0",
       "Modules.NorthWind.Domain >= 1.0.0",
-      "Modules.NorthWind.Interfaces >= 1.0.0"
+      "Modules.NorthWind.Interfaces >= 1.0.0",
+      "Modules.NorthWind.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13734,6 +13751,9 @@
             },
             "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Domain\\Modules.NorthWind.Domain.csproj": {
               "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Domain\\Modules.NorthWind.Domain.csproj"
+            },
+            "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.ViewModels\\Modules.NorthWind.ViewModels.csproj": {
+              "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.ViewModels\\Modules.NorthWind.ViewModels.csproj"
             },
             "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\EFTemplateCore\\EFTemplateCore.csproj": {
               "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\EFTemplateCore\\EFTemplateCore.csproj"

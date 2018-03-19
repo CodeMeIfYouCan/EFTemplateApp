@@ -4815,7 +4815,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -5154,13 +5154,34 @@
           "MSTest.TestAdapter": "1.2.0",
           "MSTest.TestFramework": "1.2.0",
           "Microsoft.NET.Test.Sdk": "15.5.0",
-          "Microsoft.NETCore.App": "2.0.0"
+          "Microsoft.NETCore.App": "2.0.0",
+          "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
           "bin/placeholder/EFTemplateCore.UnitTests.dll": {}
         },
         "runtime": {
           "bin/placeholder/EFTemplateCore.UnitTests.dll": {}
+        }
+      },
+      "Modules.NorthWind.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "EFTemplateCore": "1.0.0",
+          "EFTemplateCore.UnitTests": "1.0.0",
+          "Modules.NorthWind.Configuration": "1.0.0",
+          "Modules.NorthWind.Data": "1.0.0",
+          "Modules.NorthWind.Domain": "1.0.0",
+          "Modules.NorthWind.Interfaces": "1.0.0",
+          "Modules.NorthWind.UnitTests": "1.0.0",
+          "Modules.NorthWind.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Modules.NorthWind.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.NorthWind.BusinessLogic.dll": {}
         }
       },
       "Modules.NorthWind.Configuration/1.0.0": {
@@ -5229,6 +5250,27 @@
           "bin/placeholder/Modules.NorthWind.Interfaces.dll": {}
         }
       },
+      "Modules.NorthWind.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "EFTemplateCore": "1.0.0",
+          "EFTemplateCore.UnitTests": "1.0.0",
+          "Modules.NorthWind.BusinessLogic": "1.0.0",
+          "Modules.NorthWind.Configuration": "1.0.0",
+          "Modules.NorthWind.Data": "1.0.0",
+          "Modules.NorthWind.Domain": "1.0.0",
+          "Modules.NorthWind.Interfaces": "1.0.0",
+          "Modules.NorthWind.UnitTests": "1.0.0",
+          "Modules.NorthWind.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Modules.NorthWind.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.NorthWind.Service.dll": {}
+        }
+      },
       "Modules.NorthWind.UnitTests/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5242,13 +5284,24 @@
           "Modules.NorthWind.Configuration": "1.0.0",
           "Modules.NorthWind.Data": "1.0.0",
           "Modules.NorthWind.Domain": "1.0.0",
-          "Modules.NorthWind.Interfaces": "1.0.0"
+          "Modules.NorthWind.Interfaces": "1.0.0",
+          "Modules.NorthWind.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Modules.NorthWind.UnitTests.dll": {}
         },
         "runtime": {
           "bin/placeholder/Modules.NorthWind.UnitTests.dll": {}
+        }
+      },
+      "Modules.NorthWind.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Modules.NorthWind.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.NorthWind.ViewModels.dll": {}
         }
       }
     }
@@ -13673,6 +13726,11 @@
       "path": "../EFTemplateCore.UnitTests/EFTemplateCore.UnitTests.csproj",
       "msbuildProject": "../EFTemplateCore.UnitTests/EFTemplateCore.UnitTests.csproj"
     },
+    "Modules.NorthWind.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../Modules.NorthWind.BusinessLogic/Modules.NorthWind.BusinessLogic.csproj",
+      "msbuildProject": "../Modules.NorthWind.BusinessLogic/Modules.NorthWind.BusinessLogic.csproj"
+    },
     "Modules.NorthWind.Configuration/1.0.0": {
       "type": "project",
       "path": "../Modules.NorthWind.Configuration/Modules.NorthWind.Configuration.csproj",
@@ -13693,10 +13751,20 @@
       "path": "../Modules.NorthWind.Interfaces/Modules.NorthWind.Interfaces.csproj",
       "msbuildProject": "../Modules.NorthWind.Interfaces/Modules.NorthWind.Interfaces.csproj"
     },
+    "Modules.NorthWind.Service/1.0.0": {
+      "type": "project",
+      "path": "../Modules.NorthWind.Service/Modules.NorthWind.Service.csproj",
+      "msbuildProject": "../Modules.NorthWind.Service/Modules.NorthWind.Service.csproj"
+    },
     "Modules.NorthWind.UnitTests/1.0.0": {
       "type": "project",
       "path": "../Modules.NorthWind.UnitTests/Modules.NorthWind.UnitTests.csproj",
       "msbuildProject": "../Modules.NorthWind.UnitTests/Modules.NorthWind.UnitTests.csproj"
+    },
+    "Modules.NorthWind.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../Modules.NorthWind.ViewModels/Modules.NorthWind.ViewModels.csproj",
+      "msbuildProject": "../Modules.NorthWind.ViewModels/Modules.NorthWind.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13707,10 +13775,12 @@
       "Microsoft.EntityFrameworkCore >= 2.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.1",
       "Microsoft.NETCore.App >= 2.0.0",
+      "Modules.NorthWind.BusinessLogic >= 1.0.0",
       "Modules.NorthWind.Configuration >= 1.0.0",
       "Modules.NorthWind.Data >= 1.0.0",
       "Modules.NorthWind.Domain >= 1.0.0",
       "Modules.NorthWind.Interfaces >= 1.0.0",
+      "Modules.NorthWind.Service >= 1.0.0",
       "Modules.NorthWind.UnitTests >= 1.0.0"
     ]
   },
@@ -13750,6 +13820,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Service\\Modules.NorthWind.Service.csproj": {
+              "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Service\\Modules.NorthWind.Service.csproj"
+            },
             "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Data\\Modules.NorthWind.Data.csproj": {
               "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Data\\Modules.NorthWind.Data.csproj"
             },
@@ -13770,6 +13843,9 @@
             },
             "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Configuration\\Modules.NorthWind.Configuration.csproj": {
               "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.Configuration\\Modules.NorthWind.Configuration.csproj"
+            },
+            "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.BusinessLogic\\Modules.NorthWind.BusinessLogic.csproj": {
+              "projectPath": "C:\\Git\\CodeMeIfYouCan\\EFTemplateApp\\Modules.NorthWind.BusinessLogic\\Modules.NorthWind.BusinessLogic.csproj"
             }
           }
         }

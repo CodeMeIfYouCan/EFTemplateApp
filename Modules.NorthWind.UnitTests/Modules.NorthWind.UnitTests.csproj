@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Modules.NorthWind.Data\Modules.NorthWind.Data.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.Domain\Modules.NorthWind.Domain.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.Interfaces\Modules.NorthWind.Interfaces.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

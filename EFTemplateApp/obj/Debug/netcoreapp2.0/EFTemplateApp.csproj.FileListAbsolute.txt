@@ -37,3 +37,9 @@ C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Module
 C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.Domain.pdb
 C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.Interfaces.pdb
 C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.UnitTests.pdb
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.BusinessLogic.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.Service.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.BusinessLogic.pdb
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.Service.pdb
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.ViewModels.dll
+C:\Git\CodeMeIfYouCan\EFTemplateApp\EFTemplateApp\bin\Debug\netcoreapp2.0\Modules.NorthWind.ViewModels.pdb
