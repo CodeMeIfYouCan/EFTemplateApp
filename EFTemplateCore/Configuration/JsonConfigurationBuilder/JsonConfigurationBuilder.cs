@@ -6,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace EFTemplateCore.Configuration.JsonConfigurationBuilder
 {
+    /// <summary>
+    /// Default configuration builder for json configuration file,
+    /// appsettings.json
+    /// </summary>
     public class JsonConfigurationBuilder : IJsonConfigurationBuilder
     {
         public IConfigurationBuilder BuildJsonFile()
@@ -16,7 +20,7 @@ namespace EFTemplateCore.Configuration.JsonConfigurationBuilder
         }
         string GetJsonFile()
         {
-            return "appsettings.json";
+            return Constants.JsonAppsettingsFile;
         }
         string GetJsonFilePath()
         {

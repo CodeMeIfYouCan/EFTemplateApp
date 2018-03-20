@@ -81,7 +81,7 @@ namespace EFTemplateCore
             context.Database.RollbackTransaction();
         }
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// todo:garbage collection force?
         /// </summary>
         public void Dispose()
         {
@@ -90,7 +90,7 @@ namespace EFTemplateCore
         }
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// Disposes the ef context
         /// </summary>
         /// <param name="disposing">The disposing.</param>
         protected void Dispose(bool disposing)
@@ -103,7 +103,6 @@ namespace EFTemplateCore
                     context.Dispose();
                 }
             }
-
             disposed = true;
         }
     }

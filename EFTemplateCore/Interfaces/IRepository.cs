@@ -6,6 +6,11 @@ using System.Linq.Expressions;
 
 namespace EFTemplateCore.Interfaces
 {
+    /// <summary>
+    /// Default Repository interface.
+    /// todo:Delete the unneccesary methods
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public interface IRepository<TEntity> where TEntity : class, IEntity, new()
     {
          IQueryable<TEntity> AsQueryable();

@@ -10,6 +10,10 @@ using EFTemplateCore.Extensions;
 
 namespace EFTemplateCore
 { 
+    /// <summary>
+    /// todo:delete SafeCode
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public abstract class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity, new()
     {
         internal EFContext context;

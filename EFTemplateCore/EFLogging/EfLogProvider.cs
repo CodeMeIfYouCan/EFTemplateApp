@@ -7,7 +7,9 @@ namespace EFTemplateCore.EFLogging
 
     public class EFLogProvider : ILoggerProvider
     {
-        //volatile to allow the configuration to be switched without locking
+       /// <summary>
+       /// todo:double check volatile?
+       /// </summary>
         public volatile LoggingConfiguration Configuration;
         static bool DefaultFilter(string CategoryName, LogLevel level) => true;
 

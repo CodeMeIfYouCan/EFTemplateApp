@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Extensions.Logging;
+
 
 namespace EFTemplateCore.Logging
 {
-    interface ILog
+    public interface ILog
     {
-        void Log(string txt);
-        void LogFormat(string txt, params object[] p);
+        void LogFormat(string txt, LogLevel logLevel, params object[] p);
     }
 }

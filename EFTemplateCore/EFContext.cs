@@ -2,6 +2,8 @@
 using EFTemplateCore.EFDbConnection.JsonDbConnection;
 using EFTemplateCore.EFLogging;
 using EFTemplateCore.Interfaces;
+using EFTemplateCore.Logging;
+using EFTemplateCore.ServiceLocator;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -21,9 +23,8 @@ namespace EFTemplateCore
         public static readonly LoggerFactory LoggerFactory = new LoggerFactory(new[]
         {
             new EFLogProvider(
-                s => Console.WriteLine(string.Concat(@"---------------------------------------------------------
-",s)),
-                (c, l) => l == LogLevel.None || c == DbLoggerCategory.Query.Name)
+                s => Services.Create<ILog>().LogFormat(s,LogLevel.Debug), (c, l) => l == LogLevel.None || c == DbLoggerCategory.Query.Name)
+
         });
 
         public EFContext(DbConnection dbConnection)
@@ -49,7 +50,7 @@ namespace EFTemplateCore
                 else if (!string.IsNullOrWhiteSpace(connectionString)) {
                     optionsBuilder.UseSqlServer(connectionString);
                 }
-                else/////SafeUtilities
+                else//todo:safeutilities?
                 {
                     optionsBuilder.UseSqlServer(connectionString);
                 }

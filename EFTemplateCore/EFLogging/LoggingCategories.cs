@@ -4,6 +4,9 @@ using System.Text;
 
 namespace EFTemplateCore.EFLogging
 {
+    /// <summary>
+    /// Loggin category for entity framework
+    /// </summary>
     public enum LoggingCategories
     {
         All = 0,

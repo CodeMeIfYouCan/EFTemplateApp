@@ -1,15 +1,15 @@
 ﻿using EFTemplateCore.ServiceLocator;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace EFTemplateCore.EFDbConnection
 {
     public static class EFDbConnectionFactory
     {
         //todo:static or not ? not decideded yet:)
-        static Dictionary<string, Type> connectionProviders = new Dictionary<string, Type>();
+        static ConcurrentDictionary<string, Type> connectionProviders = new ConcurrentDictionary<string, Type>();
         static string DefaultProviderName {
             get { return Services.Create<IDefaultDbProvider>().GetDefaultDbProviderName(); }
         }
@@ -20,11 +20,11 @@ namespace EFTemplateCore.EFDbConnection
         }
         private static void LoadTypes()
         {
-            connectionProviders = new Dictionary<string, Type>();
+            connectionProviders = new ConcurrentDictionary<string, Type>();
             Type[] typesInThisAssembly = Assembly.GetExecutingAssembly().GetTypes();
             foreach (Type type in typesInThisAssembly) {
                 if (type.GetInterface(typeof(IEFDbConnectionProvider).ToString()) != null) {
-                    connectionProviders.Add(type.Name, type);
+                    connectionProviders.TryAdd(type.Name, type);
                 }
             }
         }

@@ -5,7 +5,8 @@ using System.Data.Common;
 namespace EFTemplateCore.Interfaces
 {
     /// <summary>
-    /// Definition of the interface for unit of work.
+    /// Unit of work interface.
+    /// todo:partial?
     /// </summary>
     public partial interface IBaseUnitOfWork : IDisposable
     {

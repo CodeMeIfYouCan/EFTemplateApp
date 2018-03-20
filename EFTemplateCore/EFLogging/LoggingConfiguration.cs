@@ -3,6 +3,9 @@ using System;
 
 namespace EFTemplateCore.EFLogging
 {
+    /// <summary>
+    /// Logging configuration class.
+    /// </summary>
     public class LoggingConfiguration
     {
         public readonly Action<string> Logger;

@@ -6,6 +6,10 @@ using System.Text;
 
 namespace EFTemplateCore.EFDbConnection.JsonDbConnection
 {
+    /// <summary>
+    /// Gets the provider name from default json configuration file,
+    /// appsettings.json
+    /// </summary>
     public class JsonDefaultDbProvider : IDefaultDbProvider
     {
         IConfigurationBuilder ConfigurationBuilder { get; set; }

@@ -6,6 +6,9 @@ using System.Linq.Expressions;
 
 namespace EFTemplateCore.Extensions
 {
+    /// <summary>
+    /// Repository extension class. Paging,nolock usage etc.
+    /// </summary>
     public static class RepositoryExtension
     {
         public static IQueryable<TEntity> Pagination<TEntity>(this IQueryable<TEntity> query, int pageIndex, int pageSize = 50, int minPage = 1, int maxPage = int.MaxValue)

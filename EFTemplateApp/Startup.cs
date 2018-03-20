@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EFTemplateCore.EFDbConnection;
-using EFTemplateCore.EFDbConnection.JsonDbConnection;
-using EFTemplateCore.ServiceLocator;
+﻿using EFTemplateCore.ServiceLocator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Modules.NorthWind.Data;
-using Modules.NorthWind.Interfaces;
 
 namespace EFTemplateApp
 {
@@ -39,5 +29,11 @@ namespace EFTemplateApp
             }
             app.UseMvc();
         }
+        //todo:check if adding logging method into loggerFactory
+        //public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        //{
+        //    loggerFactory.AddLog4Net(); // << Add this line
+        //    app.UseMvc();
+        //}
     }
 }

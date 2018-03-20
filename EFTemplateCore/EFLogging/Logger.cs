@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EFTemplateCore.EFLogging
 {
     public class Logger : ILogger
     {
-
         readonly string categoryName;
         readonly EFLogProvider provider;
         public Logger(string categoryName, EFLogProvider provider)
@@ -17,8 +14,8 @@ namespace EFTemplateCore.EFLogging
         }
         public bool IsEnabled(LogLevel logLevel)
         {
+            //todo:take log level from json settings file.
             return logLevel != LogLevel.None;
-            //todo:json'dan alınacak
         }
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state,

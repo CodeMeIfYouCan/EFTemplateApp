@@ -5,6 +5,7 @@ using System.Text;
 namespace EFTemplateCore.EFDbConnection.SafeDbConnection
 {
     /// <summary>
+    /// todo:Not implemented!!!
     /// Get Connection string and connection properties from a safe repository
     /// Ex: Azure Vault,HSM etc.
     /// </summary>

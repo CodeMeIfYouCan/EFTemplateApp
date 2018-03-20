@@ -2,12 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
-using EFTemplateCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace EFTemplateCore.Extensions
 {
+    /// <summary>
+    /// Db extension class for executing custom queries(Complex queries with many joins, operations etc.).
+    /// </summary>
     public static class DatabaseExtension
     {
         public static IEnumerable<T> GetCustomQuery<T>(this DatabaseFacade database, string sql, List<SqlParameter> parameters)

@@ -7,6 +7,10 @@ using System.Text;
 
 namespace EFTemplateCore.EFDbConnection.JsonDbConnection
 {
+    /// <summary>
+    /// Gets db connection string and other connection properties
+    /// from json configuration file.
+    /// </summary>
     public class JsonDbConnectionProvider : IEFDbConnectionProvider
     {
         IConfigurationRoot Configuration { get; set; }
