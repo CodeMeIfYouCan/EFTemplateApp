@@ -14,7 +14,9 @@ namespace Modules.NorthWind.BusinessLogic
     {
         public List<CustomerOrderDetail> GetCustomerOrderDetails()
         {
-            INorthWindUnitOfWork nUof = new NorthWindUnitOfWork("server=S0134DBTEMP; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8");
+
+
+            INorthWindUnitOfWork nUof = new NorthWindUnitOfWork();
             List<CustomerOrderDetail> result = new List<CustomerOrderDetail>();
             CustomerRepository customers = nUof.CustomerRepository;
             OrderRepository orders = nUof.OrderRepository;

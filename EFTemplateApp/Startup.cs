@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EFTemplateCore.EFDbConnection;
+using EFTemplateCore.EFDbConnection.JsonDbConnection;
+using EFTemplateCore.ServiceLocator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,16 +28,15 @@ namespace EFTemplateApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            DefaultServices.RegisterDefaultServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-            //hi
             app.UseMvc();
         }
     }

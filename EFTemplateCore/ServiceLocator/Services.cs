@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading.Tasks;
 
-namespace Intertech.Esb.Configuration {
+namespace EFTemplateCore.ServiceLocator {
     public delegate object ServiceProvider();
 
     public static class Services {

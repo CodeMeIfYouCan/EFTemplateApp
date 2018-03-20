@@ -1,5 +1,5 @@
 ﻿using EFTemplateCore.EFDbConnection;
-using EFTemplateCore.EFDbConnection.JsonDbConnectionProvider;
+using EFTemplateCore.EFDbConnection.JsonDbConnection;
 using EFTemplateCore.EFLogging;
 using EFTemplateCore.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,14 +13,16 @@ namespace EFTemplateCore
     {
         DbConnection dbConnection;
         string connectionString;
-        public EFContext() {
+        public EFContext()
+        {
+            this.connectionString = EFDbConnectionFactory.CreateDefaultInstance().GetConnectionString();
         }
-        
-        public static readonly LoggerFactory LoggerFactory = new LoggerFactory(new[] 
+
+        public static readonly LoggerFactory LoggerFactory = new LoggerFactory(new[]
         {
             new EFLogProvider(
                 s => Console.WriteLine(string.Concat(@"---------------------------------------------------------
-",s)), 
+",s)),
                 (c, l) => l == LogLevel.None || c == DbLoggerCategory.Query.Name)
         });
 
@@ -31,9 +33,8 @@ namespace EFTemplateCore
 
         public EFContext(string connectionName)
         {
-            JsonDbConnectionProvider jsonDbConnectionProvider = new JsonDbConnectionProvider(connectionName);
-            this.connectionString = jsonDbConnectionProvider.GetConnectionString();
-        }
+            this.connectionString = EFDbConnectionFactory.CreateDefaultInstance(connectionName).GetConnectionString();
+         }
 
         public EFContext(IEFDbConnectionProvider connectionProvider)
         {
@@ -41,25 +42,21 @@ namespace EFTemplateCore
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                if (dbConnection != null)
-                {
+            if (!optionsBuilder.IsConfigured) {
+                if (dbConnection != null) {
                     optionsBuilder.UseSqlServer(dbConnection);
                 }
-                else if (!string.IsNullOrWhiteSpace(connectionString))
-                {
+                else if (!string.IsNullOrWhiteSpace(connectionString)) {
                     optionsBuilder.UseSqlServer(connectionString);
                 }
                 else/////SafeUtilities
-                { 
+                {
                     optionsBuilder.UseSqlServer(connectionString);
                 }
             }
 
             base.OnConfiguring(optionsBuilder);
-            if (LoggerFactory != null)
-            {
+            if (LoggerFactory != null) {
                 optionsBuilder.UseLoggerFactory(LoggerFactory);
             }
         }

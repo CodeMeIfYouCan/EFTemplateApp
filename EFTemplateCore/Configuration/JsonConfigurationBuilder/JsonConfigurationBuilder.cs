@@ -4,9 +4,9 @@ using System.IO;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 
-namespace EFTemplateCore.EFDbConnection.JsonDbConnectionProvider
+namespace EFTemplateCore.Configuration.JsonConfigurationBuilder
 {
-    public class JsonBuildProvider : IJsonBuildProvider
+    public class JsonConfigurationBuilder : IJsonConfigurationBuilder
     {
         public IConfigurationBuilder BuildJsonFile()
         {

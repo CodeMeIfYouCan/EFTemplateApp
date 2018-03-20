@@ -29,8 +29,8 @@ namespace Modules.NorthWind.Data
         {
         }
 
-		 public NorthWindUnitOfWork(string connectionString)
-	    :base(connectionString)
+		 public NorthWindUnitOfWork(string connectionName)
+	    :base(connectionName)
         {
         }
 

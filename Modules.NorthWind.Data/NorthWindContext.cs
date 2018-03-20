@@ -56,7 +56,6 @@ namespace Modules.NorthWind.Data
         {
             InitializePartial();
         }
-		string connectionString = "";
         public NorthWindContext(string connectionName)
             :base(connectionName)
         {
@@ -64,16 +63,16 @@ namespace Modules.NorthWind.Data
         }
 
 
-       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       {
-           if (!optionsBuilder.IsConfigured)
-           {
-               if (!string.IsNullOrWhiteSpace(connectionString))
-               {
-                   optionsBuilder.UseSqlServer(connectionString);
-               }
-           }
-       }
+       //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       //{
+       //    if (!optionsBuilder.IsConfigured)
+       //    {
+       //        if (!string.IsNullOrWhiteSpace(connectionString))
+       //        {
+       //            optionsBuilder.UseSqlServer(connectionString);
+       //        }
+       //    }
+       //}
 
         public bool IsSqlParameterNull(System.Data.SqlClient.SqlParameter param)
         {

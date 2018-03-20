@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EFTemplateCore.EFDbConnection.JsonDbConnectionProvider
+namespace EFTemplateCore.Configuration.JsonConfigurationBuilder
 {
-    public interface IJsonBuildProvider
+    public interface IJsonConfigurationBuilder
     {
         IConfigurationBuilder BuildJsonFile();
     }

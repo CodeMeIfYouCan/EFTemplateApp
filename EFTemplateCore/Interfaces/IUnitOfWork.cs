@@ -10,11 +10,8 @@ namespace EFTemplateCore.Interfaces
     public partial interface IBaseUnitOfWork : IDisposable
     {
         IDbContextTransaction UseTransaction(DbTransaction dbTransaction);
-
         IDbContextTransaction BeginTransaction();
-
         void CommitTransaction();
-
         void RollbackTransaction();
     }
 }

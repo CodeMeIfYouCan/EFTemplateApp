@@ -1,5 +1,5 @@
-using EFTemplateCore.EFDbConnection;
-using EFTemplateCore.EFDbConnection.JsonDbConnectionProvider;
+using EFTemplateCore.Configuration.JsonConfigurationBuilder;
+using EFTemplateCore.EFDbConnection.JsonDbConnection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -10,10 +10,9 @@ namespace EFTemplateCore.UnitTests
     [TestClass]
     public class DbConnectiontests
     {
-
         public static string GetConnectionStringForTest()
         {
-            var mockDependency = new Mock<IJsonBuildProvider>();
+            var mockDependency = new Mock<IJsonConfigurationBuilder>();
             var dict = new Dictionary<string, string> { { "ConnectionStrings:NorthWindConnection", "server=s0134dbtemp; user=quantra; password=quantra2; database=NorthWindDatabase; pooling=true; Max Pool Size=100; Min Pool Size=8" } };
             var builder = new ConfigurationBuilder();
             builder.AddInMemoryCollection(dict);
@@ -32,7 +31,7 @@ namespace EFTemplateCore.UnitTests
         [TestMethod]
         public void TestConnectionDetails()
         {
-            var mockDependency = new Mock<IJsonBuildProvider>();
+            var mockDependency = new Mock<IJsonConfigurationBuilder>();
             var dict = new Dictionary<string, string> { { "ConnectionStrings:NorthWindConnectionDetails:CommandTimeout", "100" } };
             var builder = new ConfigurationBuilder();
             builder.AddInMemoryCollection(dict);

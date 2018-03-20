@@ -22,9 +22,9 @@ namespace EFTemplateCore
             context = new TContext();
         }
 
-        public UnitOfWork(string connectionString)
+        public UnitOfWork(string connectionName)
         {
-            context = (TContext)Activator.CreateInstance(typeof(TContext), connectionString);
+            context = (TContext)Activator.CreateInstance(typeof(TContext), connectionName);
         }
 
         /// <summary>
