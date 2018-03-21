@@ -27,7 +27,7 @@ namespace Modules.NorthWind.BusinessLogic
                             join o in orders.Table() on c.CustomerId equals o.CustomerId
                             join od in orderDetails.Table() on o.OrderId equals od.OrderId
                             join p in products.Table() on od.ProductId equals p.ProductId
-                            where c.CustomerType == CustomerType.Individual
+                            //where c.CustomerType == CustomerType.Individual
                             orderby o.OrderId descending
                             orderby c.CompanyName ascending
                             select new CustomerOrderDetailDto()

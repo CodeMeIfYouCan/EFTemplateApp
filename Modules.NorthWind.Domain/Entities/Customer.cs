@@ -32,7 +32,7 @@ namespace Modules.NorthWind.Domain
         public string Country { get; set; } // Country (length: 15)
         public string Phone { get; set; } // Phone (length: 24)
         public string Fax { get; set; } // Fax (length: 24)
-        public CustomerType? CustomerType { get; set; } // CustomerType
+        //public CustomerType? CustomerType { get; set; } // CustomerType
 
 //TODO: Deleted relational properties
 

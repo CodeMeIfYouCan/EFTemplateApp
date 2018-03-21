@@ -9,7 +9,6 @@ export class OrderDetailComponent {
     public customerOrderDetails: CustomerOrderDetailDto[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        debugger;
         http.get(baseUrl + 'api/Order/GetCustomerOrderDetail').subscribe(result => {
             this.customerOrderDetails = result.json() as CustomerOrderDetailDto[];
         }, error => console.error(error));

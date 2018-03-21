@@ -37,7 +37,7 @@ namespace Modules.NorthWind.Configuration
             builder.Property(x => x.Country).HasColumnType("nvarchar(15)").HasMaxLength(15);
             builder.Property(x => x.Phone).HasColumnType("nvarchar(24)").HasMaxLength(24);
             builder.Property(x => x.Fax).HasColumnType("nvarchar(24)").HasMaxLength(24);
-            builder.Property(x => x.CustomerType).HasColumnName(@"CustomerType").HasColumnType("int");
+            //builder.Property(x => x.CustomerType).HasColumnName(@"CustomerType").HasColumnType("int");
 
 
 
