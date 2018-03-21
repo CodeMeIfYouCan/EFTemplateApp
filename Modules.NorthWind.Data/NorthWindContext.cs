@@ -52,6 +52,7 @@ namespace Modules.NorthWind.Data
         public DbSet<Supplier> Suppliers { get; set; } // Suppliers
         public DbSet<Territory> Territories { get; set; } // Territories
 
+
         public NorthWindContext()
         {
             InitializePartial();

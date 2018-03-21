@@ -5,7 +5,7 @@ using System.Text;
 namespace Modules.NorthWind.ViewModels
 {
 
-    public class CustomerOrderDetail
+    public class CustomerOrderDetailDto
     {
         public int OrderId { get; set; } // OrderID (Primary key)
         public int ProductId { get; set; } // ProductID (Primary key)

@@ -1,0 +1,24 @@
+<h1>Order Details</h1>
+
+<p>This component get order details from the server.</p>
+
+<p *ngIf="!customerOrderDetails"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customerOrderDetail of customerOrderDetails">
+            <td>{{ customerOrderDetail.OrderId }}</td>
+            <td>{{ customerOrderDetail.ProductId }}</td>
+            <td>{{ customerOrderDetail.ProductName }}</td>
+            <td>{{ customerOrderDetail.OrderDate }}</td>
+        </tr>
+    </tbody>
+</table>

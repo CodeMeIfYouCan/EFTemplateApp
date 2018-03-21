@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
   </ItemGroup>
 

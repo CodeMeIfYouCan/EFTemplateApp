@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using EFTemplateCore.Logging;
+using EFTemplateCore.ServiceLocator;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,14 +9,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
-namespace SampleClientApplication
+namespace EFTemplateCore.ServiceCommunicator
 {
     public class RestClient
     {
-        string serviceUrl = "";
-        public RestClient(string url)
+        string baseUrl = string.Empty;
+        public RestClient(string baseUrl)
         {
-            serviceUrl = url;
+            this.baseUrl = baseUrl;
         }
 
         public T Consume<T>(string path)
@@ -40,50 +43,52 @@ namespace SampleClientApplication
             string result = Consume(path, method, request);
             return JsonConvert.DeserializeObject<T>(result);
         }
-
+        /// <summary>
+        /// todo:configure constants to appsettings.json file
+        /// compress data???
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="method"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public string Consume(string path, string method, object request)
         {
-            try
-            {
+            string response = string.Empty;
+            try {
                 string contentType = "application/json";
-                string content = "";
-                if (request != null)
-                {
+                string content = string.Empty;
+                if (request != null) {
                     content = JsonConvert.SerializeObject(request);
                 }
-
-                string url = serviceUrl + path;
-
-                HttpWebRequest req = WebRequest.Create(url) as System.Net.HttpWebRequest;
+                string url = string.Concat(baseUrl, path);
+                HttpWebRequest req = WebRequest.Create(url) as HttpWebRequest;
                 req.KeepAlive = false;
                 req.Method = method.ToUpper();
-                req.ContentType = contentType + "; charset=UTF-8; language=tr-TR";
-                req.Headers.Add("Content-Encoding", "ISO-8859-9");
+                req.ContentType = contentType + "; charset=UTF-8; language=en-US";
+                req.Headers.Add("Content-Encoding", "ISO-8859-1");
                 req.Accept = "application/json";
+                req.AutomaticDecompression = DecompressionMethods.GZip;
 
-                if (("POST,PUT").Split(',').Contains(method.ToUpper()))
-                {
+                if (("POST,PUT").Split(',').Contains(method.ToUpper())) {
                     byte[] buffer = Encoding.ASCII.GetBytes(content);
                     req.ContentLength = buffer.Length;
                     Stream PostData = req.GetRequestStream();
                     PostData.Write(buffer, 0, buffer.Length);
                     PostData.Close();
                 }
-
                 HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-                StreamReader loResponseStream = new StreamReader(resp.GetResponseStream(), System.Text.Encoding.GetEncoding("windows-1254"));
+                using (StreamReader loResponseStream = new StreamReader(resp.GetResponseStream(), Encoding.GetEncoding("ISO-8859-1"))) {
+                    response = loResponseStream.ReadToEnd();
 
-                string Response = loResponseStream.ReadToEnd();
-
-                loResponseStream.Close();
-                resp.Close();
-                return Response;
+                    loResponseStream.Close();
+                    resp.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                throw ex;
+            catch (Exception ex) {
+                Services.Create<ILog>().LogFormat("RestClient Error! Path:{0},Method:{1},Exception:{2}", LogLevel.Error, path, method, ex);
             }
+            return response;
         }
     }
 }

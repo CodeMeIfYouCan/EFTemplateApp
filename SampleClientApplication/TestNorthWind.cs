@@ -1,4 +1,5 @@
-﻿using Modules.NorthWind.ViewModels;
+﻿using EFTemplateCore.ServiceCommunicator;
+using Modules.NorthWind.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace SampleClientApplication
         internal void TestNorthWindUnitOfWorkScope()
         {
             RestClient restClient = new RestClient("http://localhost:14547/api/");
-            List<CustomerOrderDetail> test = restClient.Consume<List<CustomerOrderDetail>>("Test");
+            List<CustomerOrderDetailDto> test = restClient.Consume<List<CustomerOrderDetailDto>>("Test");
             Console.WriteLine("ProductName         UnitPrice   Quantity");
             foreach (var testRow in test)
             {

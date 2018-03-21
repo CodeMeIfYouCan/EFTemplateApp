@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EFTemplateCore.Extensions;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Modules.NorthWind.BusinessLogic;
-using Modules.NorthWind.Data;
-using Modules.NorthWind.Domain.Enums;
 using Modules.NorthWind.ViewModels;
 
 namespace Modules.NorthWind.Service
@@ -17,9 +11,9 @@ namespace Modules.NorthWind.Service
         SampleBusinessCode sampleBusinessCode = new SampleBusinessCode();
         // GET api/values
         [HttpGet]
-        public List<CustomerOrderDetail> Get()
+        public List<CustomerOrderDetailDto> Get()
         {
-            List<CustomerOrderDetail> result = sampleBusinessCode.GetCustomerOrderDetails();
+            List<CustomerOrderDetailDto> result = sampleBusinessCode.GetCustomerOrderDetails();
             return result;
         }
 

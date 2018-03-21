@@ -30,7 +30,7 @@ namespace Modules.NorthWind.UnitTests
                             where c.CustomerType == CustomerType.Individual
                             orderby o.OrderId descending
                             orderby c.CompanyName ascending
-                            select new CustomerOrderDetail()
+                            select new CustomerOrderDetailDto()
                             {
                                 OrderId = o.OrderId,
                                 ProductId = p.ProductId,
@@ -45,7 +45,7 @@ namespace Modules.NorthWind.UnitTests
                                 RequiredDate = o.RequiredDate,
                                 ShippedDate = o.ShippedDate
                             };
-            List<CustomerOrderDetail> customerOrderDetails = testQuery.Top(1000).NoLock().ToList();
+            List<CustomerOrderDetailDto> customerOrderDetails = testQuery.Top(1000).NoLock().ToList();
             Assert.IsTrue(1 == 1);
         }
         

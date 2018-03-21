@@ -12,12 +12,12 @@ namespace Modules.NorthWind.BusinessLogic
 {
     public class SampleBusinessCode
     {
-        public List<CustomerOrderDetail> GetCustomerOrderDetails()
+        public List<CustomerOrderDetailDto> GetCustomerOrderDetails()
         {
 
 
             INorthWindUnitOfWork nUof = new NorthWindUnitOfWork();
-            List<CustomerOrderDetail> result = new List<CustomerOrderDetail>();
+            List<CustomerOrderDetailDto> result = new List<CustomerOrderDetailDto>();
             CustomerRepository customers = nUof.CustomerRepository;
             OrderRepository orders = nUof.OrderRepository;
             OrderDetailRepository orderDetails = nUof.OrderDetailRepository;
@@ -30,7 +30,7 @@ namespace Modules.NorthWind.BusinessLogic
                             where c.CustomerType == CustomerType.Individual
                             orderby o.OrderId descending
                             orderby c.CompanyName ascending
-                            select new CustomerOrderDetail()
+                            select new CustomerOrderDetailDto()
                             {
                                 OrderId = o.OrderId,
                                 ProductId = p.ProductId,
@@ -46,7 +46,7 @@ namespace Modules.NorthWind.BusinessLogic
                                 ShippedDate = o.ShippedDate
                             };
 
-            result = testQuery.Top(1000).NoLock().ToList();
+            result = testQuery.Top(1).NoLock().ToList();
             return result;
         }
     }
