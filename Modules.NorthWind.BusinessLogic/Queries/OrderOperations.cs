@@ -1,27 +1,26 @@
 ﻿using EFTemplateCore.Extensions;
 using Modules.NorthWind.Data;
-using Modules.NorthWind.Domain.Enums;
 using Modules.NorthWind.ViewModels;
-using System;
+using Modules.NorthWind.ViewModels.Request;
+using Modules.NorthWind.ViewModels.Response;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
-
-namespace Modules.NorthWind.BusinessLogic
+namespace Modules.NorthWind.BusinessLogic.Transactions
 {
-    public class SampleBusinessCode
+    public class OrderOperations
     {
-        public List<CustomerOrderDetailDto> GetCustomerOrderDetails()
+        readonly INorthWindUnitOfWork northWindUnitOfWork;
+        public OrderOperations(INorthWindUnitOfWork northWindUnitOfWork)
         {
-
-
-            INorthWindUnitOfWork nUof = new NorthWindUnitOfWork();
-            List<CustomerOrderDetailDto> result = new List<CustomerOrderDetailDto>();
-            CustomerRepository customers = nUof.CustomerRepository;
-            OrderRepository orders = nUof.OrderRepository;
-            OrderDetailRepository orderDetails = nUof.OrderDetailRepository;
-            ProductRepository products = nUof.ProductRepository;
+            this.northWindUnitOfWork = northWindUnitOfWork;
+        }
+        public CustomerOrderDetailResponse GetCustomerOrderDetails(CustomerOrderDetailRequest request)
+        {
+            List<CustomerOrderDetailDto> customerOrderDetails = new List<CustomerOrderDetailDto>();
+            CustomerRepository customers = northWindUnitOfWork.CustomerRepository;
+            OrderRepository orders = northWindUnitOfWork.OrderRepository;
+            OrderDetailRepository orderDetails = northWindUnitOfWork.OrderDetailRepository;
+            ProductRepository products = northWindUnitOfWork.ProductRepository;
 
             var testQuery = from c in customers.AsQueryable()
                             join o in orders.Table() on c.CustomerId equals o.CustomerId
@@ -45,8 +44,8 @@ namespace Modules.NorthWind.BusinessLogic
                                 ShippedDate = o.ShippedDate
                             };
 
-            result = testQuery.Top(1).NoLock().ToList();
-            return result;
+            customerOrderDetails = testQuery.Top(1).NoLock().ToList();
+            return new CustomerOrderDetailResponse() { CustomerOrderDetails = customerOrderDetails } ;
         }
     }
 }

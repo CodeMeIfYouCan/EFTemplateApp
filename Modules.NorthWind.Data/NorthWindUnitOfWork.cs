@@ -20,9 +20,11 @@ namespace Modules.NorthWind.Data
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
+    using Modules.NorthWind.Data.Interfaces;
+
     // NorthWindUnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public class NorthWindUnitOfWork : UnitOfWork<NorthWindContext>, INorthWindUnitOfWork
+    public class NorthWindUnitOfWork : UnitOfWork<NorthWindContext>, INorthWindTransactionaUnitOfWork //INorthWindUnitOfWork
     {	    
 		public NorthWindUnitOfWork()
 	    :base()

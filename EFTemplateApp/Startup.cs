@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Modules.NorthWind.Data;
+using Modules.NorthWind.Data.Interfaces;
 
 namespace EFTemplateApp
 {
@@ -19,6 +21,7 @@ namespace EFTemplateApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<INorthWindTransactionaUnitOfWork, NorthWindUnitOfWork>();
             DefaultServices.RegisterDefaultServices();
         }
 

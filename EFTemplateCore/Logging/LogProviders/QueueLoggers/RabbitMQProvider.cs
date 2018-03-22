@@ -3,7 +3,7 @@
 namespace EFTemplateCore.Logging.LogProviders.QueueLoggers
 {
     /// <summary>
-    /// todo:Not implemented!!!
+    /// todo:emrahdi Not implemented!!!
     /// Send log messages to RabbitMQ.
     /// Implement another thread(s) process consume from RabbitMQ
     /// </summary>
@@ -11,6 +11,7 @@ namespace EFTemplateCore.Logging.LogProviders.QueueLoggers
     {
         public void LogQueueMessage(object message)
         {
+            //todo:emrahdi try catch block must be added!
             throw new NotImplementedException();
         }
     }

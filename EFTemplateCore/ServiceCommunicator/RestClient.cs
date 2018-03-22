@@ -3,7 +3,6 @@ using EFTemplateCore.ServiceLocator;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -67,7 +66,7 @@ namespace EFTemplateCore.ServiceCommunicator
                 req.ContentType = contentType + "; charset=UTF-8; language=en-US";
                 req.Headers.Add("Content-Encoding", "ISO-8859-1");
                 req.Accept = "application/json";
-                req.AutomaticDecompression = DecompressionMethods.GZip;
+                //req.AutomaticDecompression = DecompressionMethods.GZip;
 
                 if (("POST,PUT").Split(',').Contains(method.ToUpper())) {
                     byte[] buffer = Encoding.ASCII.GetBytes(content);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFTemplateCore.ServiceLocator;
+using System;
 
 namespace SampleClientApplication
 {
@@ -6,9 +7,11 @@ namespace SampleClientApplication
     {
         static void Main(string[] args)
         {
+            DefaultServices.RegisterDefaultServices();
             Console.WriteLine("Ef Template Service Tester");
             Console.WriteLine("-------------------------");
-            Console.WriteLine("N)\t Test NorthWind UnitOfWork Scope");
+            Console.WriteLine("Q)\t Select CustomerOrders");
+            Console.WriteLine("I)\t Insert Employee");
             Console.WriteLine("E)\t Exit");
             Console.Write("Select option >>");
 
@@ -39,9 +42,12 @@ namespace SampleClientApplication
             TestNorthWind testNorthWind = new TestNorthWind();
             switch (command.ToUpper())
             {
-                case "N":
-                    testNorthWind.TestNorthWindUnitOfWorkScope();
+                case "Q":
+                    testNorthWind.GetCustomerOrderDetialsTest();
                     break;
+                case "I":
+                    testNorthWind.InsertEmployeeTest();
+                break;
                 default:
                     break;
             }
