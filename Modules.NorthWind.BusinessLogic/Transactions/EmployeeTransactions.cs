@@ -1,4 +1,6 @@
-﻿using Modules.NorthWind.Data;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Modules.NorthWind.Data;
+using Modules.NorthWind.ViewModels.Model;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 using System.Collections.Generic;
@@ -15,10 +17,32 @@ namespace Modules.NorthWind.BusinessLogic.Transactions
 
         public EmployeeResponse InsertEmployee(EmployeeRequest request)
         {
-            var employeeRepository = northWindUnitOfWork.EmployeeRepository;
             EmployeeResponse response = new EmployeeResponse();
-            var insertedResult=employeeRepository.Add(new Domain.Employee() { FirstName = request.EmployeeDto.FirstName, LastName = request.EmployeeDto.LastName });
-            response.EmployeeId = response.EmployeeId;
+            EmployeeDto employeeDto = request.EmployeeDto;
+            
+            EmployeeRepository employeeRepository = northWindUnitOfWork.EmployeeRepository;
+            EntityEntry<Domain.Employee> employee = employeeRepository.Add(new Domain.Employee()
+            {
+                EmployeeId = employeeDto.EmployeeId,
+                FirstName = employeeDto.FirstName,
+                LastName = employeeDto.LastName,
+                Title = employeeDto.Title,
+                TitleOfCourtesy = employeeDto.TitleOfCourtesy,
+                BirthDate = employeeDto.BirthDate,
+                HireDate = employeeDto.HireDate,
+                Address = employeeDto.Address,
+                City = employeeDto.City,
+                Region = employeeDto.Region,
+                PostalCode = employeeDto.PostalCode,
+                Country = employeeDto.Country,
+                HomePhone = employeeDto.HomePhone,
+                Extension = employeeDto.Extension,
+                Photo = employeeDto.Photo,
+                Notes = employeeDto.Notes,
+                ReportsTo = employeeDto.ReportsTo,
+                PhotoPath = employeeDto.PhotoPath
+            });
+            response.EmployeeId = employee.Entity.EmployeeId;
             return response;
         }
     }

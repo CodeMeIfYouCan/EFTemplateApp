@@ -1,11 +1,14 @@
 ﻿using EFTemplateCore.ServiceLocator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Modules.NorthWind.Data;
 using Modules.NorthWind.Data.Interfaces;
+using System.IO.Compression;
+using System.Linq;
 
 namespace EFTemplateApp
 {
@@ -22,6 +25,16 @@ namespace EFTemplateApp
         {
             services.AddMvc();
             services.AddTransient<INorthWindTransactionaUnitOfWork, NorthWindUnitOfWork>();
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<GzipCompressionProvider>();
+                options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "image/svg+xml" });
+                //todo:turenc-->https://docs.microsoft.com/en-us/aspnet/core/performance/response-compression?tabs=aspnetcore2x
+            });
+            services.Configure<GzipCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.Fastest;
+            });
             DefaultServices.RegisterDefaultServices();
         }
 
@@ -31,6 +44,7 @@ namespace EFTemplateApp
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseResponseCompression();
             app.UseMvc();
         }
         ////todo:check if adding logging method into loggerFactory

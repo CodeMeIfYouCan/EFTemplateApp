@@ -54,7 +54,6 @@ namespace EFTemplateCore.ServiceCommunicator
         {
             string response = string.Empty;
             try {
-                string contentType = "application/json";
                 string content = string.Empty;
                 if (request != null) {
                     content = JsonConvert.SerializeObject(request);
@@ -63,13 +62,16 @@ namespace EFTemplateCore.ServiceCommunicator
                 HttpWebRequest req = WebRequest.Create(url) as HttpWebRequest;
                 req.KeepAlive = false;
                 req.Method = method.ToUpper();
-                req.ContentType = contentType + "; charset=UTF-8; language=en-US";
-                req.Headers.Add("Content-Encoding", "ISO-8859-1");
+                req.Headers.Add("Content-Encoding", "ISO-8859-9");
                 req.Accept = "application/json";
-                //req.AutomaticDecompression = DecompressionMethods.GZip;
-
+                req.AutomaticDecompression = DecompressionMethods.GZip;
+                req.Headers[HttpRequestHeader.ContentType] = "application/json;charset=utf-8;language=tr-TR";
+                //req.SendChunked = true;
+                //req.TransferEncoding = "gzip";
                 if (("POST,PUT").Split(',').Contains(method.ToUpper())) {
-                    byte[] buffer = Encoding.ASCII.GetBytes(content);
+
+                    UTF8Encoding encodedData = new UTF8Encoding();
+                    byte[] buffer = encodedData.GetBytes(content);
                     req.ContentLength = buffer.Length;
                     Stream PostData = req.GetRequestStream();
                     PostData.Write(buffer, 0, buffer.Length);
@@ -77,7 +79,7 @@ namespace EFTemplateCore.ServiceCommunicator
                 }
                 HttpWebResponse resp = req.GetResponse() as HttpWebResponse;
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-                using (StreamReader loResponseStream = new StreamReader(resp.GetResponseStream(), Encoding.GetEncoding("ISO-8859-1"))) {
+                using (StreamReader loResponseStream = new StreamReader(resp.GetResponseStream(), Encoding.GetEncoding("ISO-8859-9"))) {
                     response = loResponseStream.ReadToEnd();
 
                     loResponseStream.Close();
