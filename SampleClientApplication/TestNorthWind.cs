@@ -16,7 +16,7 @@ namespace SampleClientApplication
             customerOrderDetailRequest.CustomerId = 24325;
 
             RestClient restClient = new RestClient("http://localhost:14547/api/");
-            List<CustomerOrderDetailDto> customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder", customerOrderDetailRequest).CustomerOrderDetails;
+            List<CustomerOrderDetailDto> customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder/GetCustomerOrderDetail", customerOrderDetailRequest).CustomerOrderDetails;
             Console.WriteLine("ProductName         UnitPrice   Quantity");
             foreach (var testRow in customerOrder)
             {
@@ -38,7 +38,7 @@ namespace SampleClientApplication
                 }
             };
 
-            EmployeeResponse employeeResponse = restClient.Consume<EmployeeResponse>("Employee", employeeRequest); ;
+            EmployeeResponse employeeResponse = restClient.Consume<EmployeeResponse>("Employee/InsertEmpoloyee", employeeRequest); ;
             Console.WriteLine($"EmployeeId: {employeeResponse.EmployeeId}");
         }
 

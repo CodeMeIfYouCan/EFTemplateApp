@@ -24,8 +24,8 @@ namespace Modules.NorthWind.Service
             employeeTransactions = new EmployeeTransactions(unitOfWork);
         }
 
-        [HttpPost]
-        public EmployeeResponse Post(EmployeeRequest request)
+        [HttpPost("[action]")]
+        public EmployeeResponse InsertEmpoloyee(EmployeeRequest request)
         {
             EmployeeResponse response = TransactionProcessor<NorthWindContext>.Execute
                (

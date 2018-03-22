@@ -19,8 +19,8 @@ namespace Modules.NorthWind.Service
             this.unitOfWork = unitOfWork;
             orderOperations = new OrderOperations(unitOfWork);
         }
-        [HttpPost]
-        public CustomerOrderDetailResponse Post([FromBody] CustomerOrderDetailRequest request)
+        [HttpPost("[action]")]
+        public CustomerOrderDetailResponse GetCustomerOrderDetail(CustomerOrderDetailRequest request)
         {
             CustomerOrderDetailResponse response = orderOperations.GetCustomerOrderDetails(request);
             return response;
