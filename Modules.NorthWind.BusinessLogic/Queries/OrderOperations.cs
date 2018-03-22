@@ -1,6 +1,7 @@
 ﻿using EFTemplateCore.Extensions;
 using Modules.NorthWind.Data;
 using Modules.NorthWind.ViewModels;
+using Modules.NorthWind.ViewModels.DataTransferObjects;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 using System.Collections.Generic;

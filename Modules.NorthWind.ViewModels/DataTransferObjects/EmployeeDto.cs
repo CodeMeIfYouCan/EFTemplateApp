@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EFTemplateCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Modules.NorthWind.ViewModels.Model
+namespace Modules.NorthWind.ViewModels.DataTransferObjects
 {
-    public class EmployeeDto
+    public class EmployeeDto : IDto
     {
         public int EmployeeId { get; set; } // EmployeeID (Primary key)
         public string LastName { get; set; } // LastName (length: 20)

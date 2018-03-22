@@ -16,13 +16,14 @@ namespace Modules.NorthWind.Data
 {
     using EFTemplateCore;
     using Modules.NorthWind.Configuration;
+    using Modules.NorthWind.Data.Interfaces;
     using Modules.NorthWind.Domain;
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
     // INorthWindUnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public interface INorthWindUnitOfWork  : System.IDisposable //TODO:   IUnitOfWork can be added for access base unit of work 
+    public interface INorthWindUnitOfWork  : System.IDisposable
     {
 		AlphabeticalListOfProductRepository AlphabeticalListOfProductRepository { get; }
 		CategoryRepository CategoryRepository { get; }

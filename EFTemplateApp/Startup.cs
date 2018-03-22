@@ -24,7 +24,7 @@ namespace EFTemplateApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddTransient<INorthWindTransactionaUnitOfWork, NorthWindUnitOfWork>();
+            services.AddTransient<INorthWindTransactionalUnitOfWork, NorthWindUnitOfWork>();
             services.AddResponseCompression(options =>
             {
                 options.Providers.Add<GzipCompressionProvider>();

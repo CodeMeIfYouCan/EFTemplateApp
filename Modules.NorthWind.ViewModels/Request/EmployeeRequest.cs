@@ -1,5 +1,5 @@
 ﻿using EFTemplateCore.TransactionManager;
-using Modules.NorthWind.ViewModels.Model;
+using Modules.NorthWind.ViewModels.DataTransferObjects;
 
 namespace Modules.NorthWind.ViewModels.Request
 {

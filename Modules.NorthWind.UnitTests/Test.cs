@@ -7,6 +7,7 @@ using System.Linq;
 using EFTemplateCore.Extensions;
 using Modules.NorthWind.Domain.Enums;
 using Modules.NorthWind.ViewModels;
+using Modules.NorthWind.ViewModels.DataTransferObjects;
 
 namespace Modules.NorthWind.UnitTests
 {

@@ -16,6 +16,7 @@ namespace Modules.NorthWind.Data
 {
     using EFTemplateCore;
     using Modules.NorthWind.Configuration;
+    using Modules.NorthWind.Data.Interfaces;
     using Modules.NorthWind.Domain;
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;

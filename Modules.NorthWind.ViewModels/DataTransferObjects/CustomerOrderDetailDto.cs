@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EFTemplateCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Modules.NorthWind.ViewModels
+namespace Modules.NorthWind.ViewModels.DataTransferObjects
 {
-
-    public class CustomerOrderDetailDto
+    public class CustomerOrderDetailDto : IDto
     {
         public int OrderId { get; set; } // OrderID (Primary key)
         public int ProductId { get; set; } // ProductID (Primary key)

@@ -14,11 +14,11 @@ namespace Modules.NorthWind.Service
     public class EmployeeController : Controller
     {
         readonly EmployeeTransactions employeeTransactions;
-        readonly INorthWindTransactionaUnitOfWork unitOfWork;
+        readonly INorthWindTransactionalUnitOfWork unitOfWork;
 
         public static int HttpPost { get; private set; }
 
-        public EmployeeController(INorthWindTransactionaUnitOfWork unitOfWork)
+        public EmployeeController(INorthWindTransactionalUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             employeeTransactions = new EmployeeTransactions(unitOfWork);

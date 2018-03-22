@@ -1,5 +1,6 @@
 ﻿using EFTemplateCore.ServiceCommunicator;
 using Modules.NorthWind.ViewModels;
+using Modules.NorthWind.ViewModels.DataTransferObjects;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 using System;
@@ -33,7 +34,7 @@ namespace SampleClientApplication
 
             EmployeeRequest employeeRequest = new EmployeeRequest()
             {
-                EmployeeDto = new Modules.NorthWind.ViewModels.Model.EmployeeDto()
+                EmployeeDto = new EmployeeDto()
                 {
                     EmployeeId = 0,
                     LastName = "Engin",

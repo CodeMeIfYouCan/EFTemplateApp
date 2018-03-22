@@ -932,7 +932,7 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // I<#=Settings.ModuleN
 <# } #>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
-    public interface I<#=Settings.ModuleName#>UnitOfWork  : System.IDisposable //TODO:   IUnitOfWork can be added for access base unit of work 
+    public interface I<#=Settings.ModuleName#>UnitOfWork  : System.IDisposable
     {
 	<#
 		foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
@@ -948,7 +948,7 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=Settings.ModuleNa
 <# } #>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
-    public class <#=Settings.ModuleName#>UnitOfWork : UnitOfWork<<#=Settings.DbContextName#>>, I<#=Settings.ModuleName#>UnitOfWork
+    public class <#=Settings.ModuleName#>UnitOfWork : UnitOfWork<<#=Settings.DbContextName#>>, I<#=Settings.ModuleName#>TransactionalUnitOfWork
     {	    
 		public <#=Settings.ModuleName#>UnitOfWork()
 	    :base()

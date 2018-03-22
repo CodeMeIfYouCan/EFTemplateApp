@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Modules.NorthWind.Data.Interfaces
 {
-    public interface INorthWindTransactionaUnitOfWork: IUnitOfWork<NorthWindContext>, INorthWindUnitOfWork
+    public interface INorthWindTransactionalUnitOfWork: IUnitOfWork<NorthWindContext>, INorthWindUnitOfWork
     {
     }
 }

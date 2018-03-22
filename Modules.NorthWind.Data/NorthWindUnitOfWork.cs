@@ -16,15 +16,14 @@ namespace Modules.NorthWind.Data
 {
     using EFTemplateCore;
     using Modules.NorthWind.Configuration;
+    using Modules.NorthWind.Data.Interfaces;
     using Modules.NorthWind.Domain;
     using Modules.NorthWind.Interfaces;
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
-    using Modules.NorthWind.Data.Interfaces;
-
     // NorthWindUnitOfWork
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public class NorthWindUnitOfWork : UnitOfWork<NorthWindContext>, INorthWindTransactionaUnitOfWork //INorthWindUnitOfWork
+    public class NorthWindUnitOfWork : UnitOfWork<NorthWindContext>, INorthWindTransactionalUnitOfWork
     {	    
 		public NorthWindUnitOfWork()
 	    :base()

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EFTemplateCore.ServiceCommunicator;
 using Microsoft.AspNetCore.Mvc;
 using Modules.NorthWind.ViewModels;
+using Modules.NorthWind.ViewModels.DataTransferObjects;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 

@@ -13,8 +13,8 @@ namespace Modules.NorthWind.Service
     public class CustomerOrderController : Controller
     {
         readonly OrderOperations orderOperations;
-        readonly INorthWindTransactionaUnitOfWork unitOfWork;
-        public CustomerOrderController(INorthWindTransactionaUnitOfWork unitOfWork)
+        readonly INorthWindTransactionalUnitOfWork unitOfWork;
+        public CustomerOrderController(INorthWindTransactionalUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             orderOperations = new OrderOperations(unitOfWork);
