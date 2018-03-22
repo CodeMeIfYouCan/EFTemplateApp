@@ -228,24 +228,13 @@ foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping && t.HasP
 <#if(Settings.MakeClassesPartial) {#>            InitializePartial();
 <#}#>
         }
-		string connectionString = "";
-        <# if(Settings.MakeClassesInternal) { #>internal<# } else { #>public<# } #> <#=Settings.DbContextName#>(string connectionString)
+
+        <# if(Settings.MakeClassesInternal) { #>internal<# } else { #>public<# } #> <#=Settings.DbContextName#>(string connectionName)
+		:base(connectionName)
         {
 <#if(Settings.MakeClassesPartial) {#>            InitializePartial();
-<#}#>		    this.connectionString = connectionString;
+<#}#>		    
         }
-
-
-       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       {
-           if (!optionsBuilder.IsConfigured)
-           {
-               if (!string.IsNullOrWhiteSpace(connectionString))
-               {
-                   optionsBuilder.UseSqlServer(connectionString);
-               }
-           }
-       }
 
 <#if(!Settings.IsSqlCe){ #>
         public bool IsSqlParameterNull(System.Data.SqlClient.SqlParameter param)
@@ -966,8 +955,8 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=Settings.ModuleNa
         {
         }
 
-		 public <#=Settings.ModuleName#>UnitOfWork(string connectionString)
-	    :base(connectionString)
+		 public <#=Settings.ModuleName#>UnitOfWork(string connectionName)
+	    :base(connectionName)
         {
         }
 

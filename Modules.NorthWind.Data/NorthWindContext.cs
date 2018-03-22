@@ -52,28 +52,17 @@ namespace Modules.NorthWind.Data
         public DbSet<Supplier> Suppliers { get; set; } // Suppliers
         public DbSet<Territory> Territories { get; set; } // Territories
 
-
         public NorthWindContext()
         {
             InitializePartial();
         }
+
         public NorthWindContext(string connectionName)
-            :base(connectionName)
+		:base(connectionName)
         {
             InitializePartial();
+		    
         }
-
-
-       //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       //{
-       //    if (!optionsBuilder.IsConfigured)
-       //    {
-       //        if (!string.IsNullOrWhiteSpace(connectionString))
-       //        {
-       //            optionsBuilder.UseSqlServer(connectionString);
-       //        }
-       //    }
-       //}
 
         public bool IsSqlParameterNull(System.Data.SqlClient.SqlParameter param)
         {
