@@ -2,8 +2,7 @@
 
 <p>This component get order details from the server.</p>
 
-<p  *ngIf="!customerOrderDetails"><em>Loading...</em></p>
-
+<button (click)="GetOrderDetails()">Get Order Details</button>
 <table class='table' *ngIf="customerOrderDetails">
     <thead>
         <tr>
@@ -18,7 +17,7 @@
             <td>{{ customerOrderDetail.orderId }}</td>
             <td>{{ customerOrderDetail.productId }}</td>
             <td>{{ customerOrderDetail.productName }}</td>
-            <td>{{ customerOrderDetail.orderDate }}</td>
+            <td>{{ customerOrderDetail.orderDate|date:'medium' }}</td>
         </tr>
     </tbody>
 </table>
