@@ -7,10 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.BusinessLogic\Modules.NorthWind.BusinessLogic.csproj" />
-    <ProjectReference Include="..\Modules.NorthWind.Configuration\Modules.NorthWind.Configuration.csproj" />
-    <ProjectReference Include="..\Modules.NorthWind.Data\Modules.NorthWind.Data.csproj" />
-    <ProjectReference Include="..\Modules.NorthWind.Domain\Modules.NorthWind.Domain.csproj" />
-    <ProjectReference Include="..\Modules.NorthWind.Interfaces\Modules.NorthWind.Interfaces.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.DataLayer\Modules.NorthWind.DataLayer.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
   </ItemGroup>
 

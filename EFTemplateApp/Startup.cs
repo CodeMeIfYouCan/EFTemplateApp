@@ -4,9 +4,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Modules.NorthWind.Data;
-using Modules.NorthWind.Data.Interfaces;
+using Modules.Dms.DataLayer;
+using Modules.Dms.DataLayer.Data.Interfaces;
+using Modules.NorthWind.DataLayer;
+using Modules.NorthWind.DataLayer.Data.Interfaces;
 using System.IO.Compression;
 using System.Linq;
 
@@ -25,6 +26,7 @@ namespace EFTemplateApp
         {
             services.AddMvc();
             services.AddTransient<INorthWindTransactionalUnitOfWork, NorthWindUnitOfWork>();
+            services.AddTransient<IDmsTransactionalUnitOfWork, DmsUnitOfWork>();
             services.AddResponseCompression(options =>
             {
                 options.Providers.Add<GzipCompressionProvider>();

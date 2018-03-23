@@ -74,7 +74,7 @@ foreach(var usingStatement in usingsAll.Distinct().OrderBy(x => x)) { #>
 #>
 <# if (Settings.ElementsToGenerate.HasFlag(Elements.UnitOfWork) && !string.IsNullOrWhiteSpace(Settings.DbContextInterfaceName))
 {
-    fileManager.StartNewFile(Settings.DbContextInterfaceName + Settings.FileExtension);
+    fileManager.StartNewFile("Interfaces\\"+Settings.DbContextInterfaceName + Settings.FileExtension);
     if (!Settings.GenerateSeparateFiles)
     { #>
     #region Unit of work
@@ -157,7 +157,7 @@ if (Settings.IncludeTableValuedFunctions)
 
 <# }
  if(!string.IsNullOrWhiteSpace(Settings.MigrationConfigurationFileName)) {
-       fileManager.StartNewFile(Settings.MigrationConfigurationFileName + Settings.FileExtension);  #>
+       fileManager.StartNewFile("Configuration\\"+Settings.MigrationConfigurationFileName + Settings.FileExtension);  #>
 <# if(!Settings.GenerateSeparateFiles) { #>
     // ************************************************************************
     // Db Migration Configuration
@@ -199,7 +199,7 @@ if(Settings.ElementsToGenerate.HasFlag(Elements.UnitOfWork) && !string.IsNullOrW
 
 <# }
     if(Settings.ElementsToGenerate.HasFlag(Elements.Context)){
-    fileManager.StartNewFile(Settings.DbContextName + Settings.FileExtension); #>
+    fileManager.StartNewFile("Data\\"+Settings.DbContextName + Settings.FileExtension); #>
 <# if(!Settings.GenerateSeparateFiles) { #>
     #region Database context
 
@@ -441,7 +441,7 @@ if(Settings.ElementsToGenerate.HasFlag(Elements.Context) && !Settings.GenerateSe
 <# }
     if (Settings.ElementsToGenerate.HasFlag(Elements.Context) && Settings.AddUnitTestingDbContext)
     {
-        fileManager.StartNewFile("Fake" + Settings.DbContextName + Settings.FileExtension); #>
+        fileManager.StartNewFile("Data\\"+"Fake" + Settings.DbContextName + Settings.FileExtension); #>
 <# if (!Settings.GenerateSeparateFiles)
 { #>
     #region Fake Database context
@@ -601,7 +601,7 @@ if (Settings.IncludeTableValuedFunctions)
 }
 }/**/#>
     }
-<#fileManager.StartNewFile("FakeDbSet" + Settings.FileExtension); #>
+<#fileManager.StartNewFile("Data\\"+"FakeDbSet" + Settings.FileExtension); #>
 <# if(Settings.GenerateSeparateFiles) { #>
     using System.Linq;
 <# } #>
@@ -878,7 +878,7 @@ if (Settings.IncludeTableValuedFunctions)
 
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {
- fileManager.StartNewFile("Repositories\\I" + tbl.NameHumanCaseWithSuffix + "Repository" + Settings.FileExtension);
+ fileManager.StartNewFile("Interfaces\\"+"Repositories\\I" + tbl.NameHumanCaseWithSuffix + "Repository" + Settings.FileExtension);
 
 if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=tbl.Name#>Repository
 <# } #>
@@ -899,7 +899,7 @@ if(Settings.ElementsToGenerate.HasFlag(Elements.Context)){
 
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {
- fileManager.StartNewFile("Repositories\\" + tbl.NameHumanCaseWithSuffix + "Repository" + Settings.FileExtension, true);
+ fileManager.StartNewFile("Data\\"+"Repositories\\" + tbl.NameHumanCaseWithSuffix + "Repository" + Settings.FileExtension, true);
 
 if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=tbl.Name#>Repository
 <# } #>
@@ -926,7 +926,7 @@ public class <#=tbl.NameHumanCaseWithSuffix#>Repository : GenericRepository<<#=t
 <#
 }
 
-fileManager.StartNewFile("Interfaces\\I" + Settings.ModuleName + "UnitOfWork.cs");
+fileManager.StartNewFile("Data\\"+"Interfaces\\I" + Settings.ModuleName + "UnitOfWork.cs");
 
 if(Settings.IncludeComments != CommentsStyle.None){#>    // I<#=Settings.ModuleName#>UnitOfWork
 <# } #>
@@ -942,7 +942,7 @@ if(Settings.IncludeComments != CommentsStyle.None){#>    // I<#=Settings.ModuleN
 	}#>}
 <#
 
-fileManager.StartNewFile(Settings.ModuleName + "UnitOfWork.cs");
+fileManager.StartNewFile("Data\\"+Settings.ModuleName + "UnitOfWork.cs");
 
 if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=Settings.ModuleName#>UnitOfWork
 <# } #>
@@ -1012,7 +1012,7 @@ foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(
 foreach(Table tbl in from t in Settings.Tables.Where(t => !t.IsMapping).OrderBy(x => x.NameHumanCase) select t)
 {
 #>
-<# fileManager.StartNewFile("Entities\\" + tbl.NameHumanCaseWithSuffix + Settings.FileExtension);
+<# fileManager.StartNewFile("Domain\\"+"Entities\\" + tbl.NameHumanCaseWithSuffix + Settings.FileExtension);
 if(!tbl.HasPrimaryKey) { #>
     // The table '<#=tbl.Name#>' is not usable by entity framework because it
     // does not have a primary key. It is listed here for completeness.
@@ -1076,7 +1076,7 @@ if(!Settings.GenerateSeparateFiles) { #>
 foreach(var tbl in Settings.Tables.Where(t => !t.IsMapping && t.HasPrimaryKey).OrderBy(x => x.NameHumanCase))
 {
 #>
-<# fileManager.StartNewFile(tbl.NameHumanCaseWithSuffix + Settings.ConfigurationClassName + Settings.FileExtension);
+<# fileManager.StartNewFile("Configuration\\"+tbl.NameHumanCaseWithSuffix + Settings.ConfigurationClassName + Settings.FileExtension);
 if(Settings.IncludeComments != CommentsStyle.None){#>    // <#=tbl.Name#>
 <# } #>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
@@ -1128,7 +1128,7 @@ foreach(var sp in Settings.StoredProcs.Where(x => x.ReturnModels.Count > 0 && x.
 {
     string spReturnClassName = WriteStoredProcReturnModelName(sp);
 #>
-<# fileManager.StartNewFile(spReturnClassName + Settings.FileExtension);#>
+<# fileManager.StartNewFile("Domain\\"+spReturnClassName + Settings.FileExtension);#>
 <#if(Settings.IncludeCodeGeneratedAttribute){#>    <#=CodeGeneratedAttribute#>
 <#}#>
     public <# if(Settings.MakeClassesPartial) { #>partial <# } #>class <#= spReturnClassName #>

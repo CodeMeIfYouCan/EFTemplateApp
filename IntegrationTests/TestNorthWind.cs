@@ -35,7 +35,6 @@ namespace SampleClientApplication
                     Console.WriteLine();
                 }
         }
-
         internal void InsertEmployeeTest()
         {
             RestClient restClient = new RestClient("http://localhost:14547/api/");
@@ -66,8 +65,6 @@ namespace SampleClientApplication
             EmployeeResponse employeeResponse = restClient.Consume<EmployeeResponse>("Employee/InsertEmpoloyee", employeeRequest); ;
             Console.WriteLine($"EmployeeId: {employeeResponse.EmployeeId}");
         }
-
-
         string EditCell(string cellValue, int length)
         {
             string result = cellValue;

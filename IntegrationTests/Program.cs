@@ -1,4 +1,5 @@
 ﻿using EFTemplateCore.ServiceLocator;
+using IntegrationTests;
 using System;
 
 namespace SampleClientApplication
@@ -16,15 +17,12 @@ namespace SampleClientApplication
             Console.Write("Select option >>");
 
             string command = Console.ReadLine();
-            while (command.ToUpper() != "E")
-            {
+            while (command.ToUpper() != "E") {
                 Console.WriteLine("");
-                try
-                {
+                try {
                     HandleOptions(command);
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     ex = ex.GetBaseException();
 
                     string errorMessage = "ExceptionMessage: " + ex.Message;
@@ -40,16 +38,21 @@ namespace SampleClientApplication
         static void HandleOptions(string command)
         {
             TestNorthWind testNorthWind = new TestNorthWind();
-            switch (command.ToUpper())
-            {
+            switch (command.ToUpper()) {
                 case "Q":
                     testNorthWind.GetCustomerOrderDetialsTest();
                     break;
                 case "I":
                     testNorthWind.InsertEmployeeTest();
-                break;
-                default:
                     break;
+                case "G":
+                    TestDocuments.GetDocument();
+                    break;
+                case "A":
+                    TestDocuments.InsertDocument();
+                    break;
+                default:
+                break;
             }
         }
     }

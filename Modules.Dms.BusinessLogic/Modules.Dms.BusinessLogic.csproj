@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+    <ProjectReference Include="..\Modules.Dms.DataLayer\Modules.Dms.DataLayer.csproj" />
+    <ProjectReference Include="..\Modules.Dms.ViewModels\Modules.Dms.ViewModels.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

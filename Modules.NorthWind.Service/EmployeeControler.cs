@@ -1,9 +1,8 @@
 ﻿using EFTemplateCore.TransactionManager;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Modules.NorthWind.BusinessLogic.Transactions;
-using Modules.NorthWind.Data;
-using Modules.NorthWind.Data.Interfaces;
+using Modules.NorthWind.DataLayer;
+using Modules.NorthWind.DataLayer.Data.Interfaces;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 

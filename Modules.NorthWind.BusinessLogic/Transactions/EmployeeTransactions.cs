@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Modules.NorthWind.Data;
 using Modules.NorthWind.ViewModels.DataTransferObjects;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 using EFTemplateCore.ModelMapper;
-using Modules.NorthWind.Domain;
+using Modules.NorthWind.DataLayer;
 
 namespace Modules.NorthWind.BusinessLogic.Transactions
 {
@@ -24,5 +23,6 @@ namespace Modules.NorthWind.BusinessLogic.Transactions
             response.EmployeeId = employee.Entity.EmployeeId;
             return response;
         }
+
     }
 }

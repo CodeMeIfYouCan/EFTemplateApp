@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Sql\CUS.CUSTOMER_RESPONSIBLE_SELECT.cs" />
+    <Compile Remove="Data\Sql\CUSTOMER_SELECT.cs" />
+    <Compile Remove="Data\Sql\CUSTOMER_SELECT_test1y.cs" />
+    <Compile Remove="Data\Sql\CUSTOMER_SELECT_WITH_PARAMS.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Sql\CUS.CUSTOMERS_SELECT.sql" />
+    <None Remove="Data\Sql\CUS.CUSTOMER_RESPONSIBLE_SELECT.sql" />
+    <None Remove="Data\Sql\CUSTOMER_SELECT.sql" />
+    <None Remove="Data\Sql\CUSTOMER_SELECT_test1y.sql" />
+    <None Remove="Data\Sql\CUSTOMER_SELECT_WITH_PARAMS.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Data\Sql\" />
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Interfaces\Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="NorthWindGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NorthWindGenerator.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NorthWindGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthWindGenerator.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

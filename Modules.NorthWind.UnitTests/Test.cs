@@ -1,13 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Modules.NorthWind.Data;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using EFTemplateCore.Extensions;
-using Modules.NorthWind.Domain.Enums;
-using Modules.NorthWind.ViewModels;
 using Modules.NorthWind.ViewModels.DataTransferObjects;
+using Modules.NorthWind.DataLayer;
 
 namespace Modules.NorthWind.UnitTests
 {
