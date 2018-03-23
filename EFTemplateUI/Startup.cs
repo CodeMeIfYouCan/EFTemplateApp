@@ -1,3 +1,4 @@
+using EFTemplateCore.ServiceLocator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -19,6 +20,7 @@ namespace EFTemplateUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            DefaultServices.RegisterDefaultServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

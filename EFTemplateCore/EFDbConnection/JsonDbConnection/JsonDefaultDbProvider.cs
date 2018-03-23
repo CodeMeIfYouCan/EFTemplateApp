@@ -18,9 +18,8 @@ namespace EFTemplateCore.EFDbConnection.JsonDbConnection
         {
             JsonConfigurationBuilder builder = new JsonConfigurationBuilder();
             ConfigurationBuilder = builder.BuildJsonFile();
-            ConfigurationBuilder.Build();
             Configuration = ConfigurationBuilder.Build();
-            return Configuration.GetValue<string>(Constants.DbConnectionProvider);
+            return Configuration.GetValue<string>(Constants.DbConnectionProviderKey);
         }
     }
 }

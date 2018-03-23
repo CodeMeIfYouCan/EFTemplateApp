@@ -26,7 +26,7 @@ namespace Modules.NorthWind.Service
 
         //todo:turenc-FromBody-->https://stackoverflow.com/questions/24625303/why-do-we-have-to-specify-frombody-and-fromuri
         [HttpPost("[action]")]
-        public EmployeeResponse InsertEmpoloyee([FromBody] EmployeeRequest request)
+        public IActionResult InsertEmpoloyee([FromBody] EmployeeRequest request)
         {
             EmployeeResponse response = TransactionProcessor<NorthWindContext>.Execute
                (
@@ -34,7 +34,7 @@ namespace Modules.NorthWind.Service
                    request,
                    unitOfWork
                );
-            return response;
+            return new JsonResult(response);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EFTemplateCore.Configuration.JsonConfigurationBuilder;
+using EFTemplateCore.ServiceLocator;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -39,17 +40,12 @@ namespace EFTemplateCore.EFDbConnection.JsonDbConnection
         }
         void BuildConfigurationFile()
         {
-            this.JsonConfigurationBuilder = new JsonConfigurationBuilder();
-            ConfigurationBuilder = BuildJsonFile();
+            ConfigurationBuilder = Services.Create<IJsonConfigurationBuilder>().BuildJsonFile();
             Configuration = ConfigurationBuilder.Build();
         }
         public string GetConnectionString()
         {
             return Configuration.GetConnectionString(ConnectionName);
-        }
-        IConfigurationBuilder BuildJsonFile()
-        {
-            return JsonConfigurationBuilder.BuildJsonFile();
         }
         public T GetConnectionProperty<T>(string propertyName)
         {

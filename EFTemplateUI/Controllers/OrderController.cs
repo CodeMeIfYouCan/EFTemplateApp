@@ -25,7 +25,8 @@ namespace EFTemplateUI.Controllers
             CustomerOrderDetailRequest customerOrderDetailRequest = new CustomerOrderDetailRequest();
             customerOrderDetailRequest.CustomerId = 24325;
             RestClient restClient = new RestClient("http://localhost:14547/api/");
-            List<CustomerOrderDetailDto> customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder", customerOrderDetailRequest).CustomerOrderDetails;
+            Dictionary<string, string> userInfo = new Dictionary<string, string>();
+            List<CustomerOrderDetailDto> customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder/GetCustomerOrderDetail", "POST", customerOrderDetailRequest, userInfo).CustomerOrderDetails;
             return customerOrder;
         }
     }

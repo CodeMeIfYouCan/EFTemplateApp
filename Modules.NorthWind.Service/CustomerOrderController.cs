@@ -1,10 +1,15 @@
-﻿using EFTemplateCore.TransactionManager;
+﻿using EFTemplateCore.Logging;
+using EFTemplateCore.ServiceCommunicator.Security;
+using EFTemplateCore.ServiceLocator;
+using EFTemplateCore.TransactionManager;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Modules.NorthWind.BusinessLogic.Transactions;
 using Modules.NorthWind.Data;
 using Modules.NorthWind.Data.Interfaces;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
+using System;
 
 namespace Modules.NorthWind.Service
 {
@@ -14,34 +19,28 @@ namespace Modules.NorthWind.Service
     {
         readonly OrderOperations orderOperations;
         readonly INorthWindTransactionalUnitOfWork unitOfWork;
+        readonly ICredentialValidator credentialValidator;
         public CustomerOrderController(INorthWindTransactionalUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             orderOperations = new OrderOperations(unitOfWork);
+            this.credentialValidator = CredentialValidationFactory.CreateDefaultInstance();
         }
         [HttpPost("[action]")]
-        public CustomerOrderDetailResponse GetCustomerOrderDetail(CustomerOrderDetailRequest request)
+        public IActionResult GetCustomerOrderDetail(CustomerOrderDetailRequest request,[FromHeader] object obj)
         {
-            CustomerOrderDetailResponse response = orderOperations.GetCustomerOrderDetails(request);
-            return response;
-        }
-        
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+            try {
+                credentialValidator.CheckCredentials(this.Request.Headers);
+            }
+            catch (Exception ex) {
+                Services.Create<ILog>().LogFormat("Unauthorized request.Exception:{0}", LogLevel.Warning, ex);
+                return Unauthorized();
+            }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            CustomerOrderDetailResponse response = orderOperations.GetCustomerOrderDetails(request);
+            if (response == null)
+                return NotFound();
+            return new JsonResult(response);
         }
     }
 }

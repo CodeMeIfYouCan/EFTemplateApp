@@ -17,25 +17,31 @@ namespace SampleClientApplication
             customerOrderDetailRequest.CustomerId = 24325;
 
             RestClient restClient = new RestClient("http://localhost:14547/api/");
-            List<CustomerOrderDetailDto> customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder/GetCustomerOrderDetail", customerOrderDetailRequest).CustomerOrderDetails;
-            Console.WriteLine("ProductName         UnitPrice   Quantity");
-            foreach (var testRow in customerOrder)
-            {
-                Console.Write(EditCell(testRow.ProductName, 20));
-                Console.Write(EditCell(testRow.UnitPrice.ToString(), 12));
-                Console.Write(EditCell(testRow.Quantity.ToString(), 8));
-                Console.WriteLine();
+            Dictionary<string, string> userInfo = new Dictionary<string, string>();
+            userInfo.Add("Username", "1");
+            userInfo.Add("Password", "2");
+            List<CustomerOrderDetailDto> customerOrder = new List<CustomerOrderDetailDto>();
+            try {
+                customerOrder = restClient.Consume<CustomerOrderDetailResponse>("CustomerOrder/GetCustomerOrderDetail", "POST", customerOrderDetailRequest, userInfo).CustomerOrderDetails;
             }
+            catch (Exception ex) {
+            }
+            Console.WriteLine("ProductName         UnitPrice   Quantity");
+            if (customerOrder != null)
+                foreach (var testRow in customerOrder) {
+                    Console.Write(EditCell(testRow.ProductName, 20));
+                    Console.Write(EditCell(testRow.UnitPrice.ToString(), 12));
+                    Console.Write(EditCell(testRow.Quantity.ToString(), 8));
+                    Console.WriteLine();
+                }
         }
 
         internal void InsertEmployeeTest()
         {
             RestClient restClient = new RestClient("http://localhost:14547/api/");
 
-            EmployeeRequest employeeRequest = new EmployeeRequest()
-            {
-                EmployeeDto = new EmployeeDto()
-                {
+            EmployeeRequest employeeRequest = new EmployeeRequest() {
+                EmployeeDto = new EmployeeDto() {
                     EmployeeId = 0,
                     LastName = "Engin",
                     FirstName = "Türenç",
@@ -66,14 +72,11 @@ namespace SampleClientApplication
         {
             string result = cellValue;
             if (string.IsNullOrEmpty(cellValue)) return result;
-            if (cellValue.Length > length)
-            {
-                result = cellValue.Substring(0, length-3) + "...";
+            if (cellValue.Length > length) {
+                result = cellValue.Substring(0, length - 3) + "...";
             }
-            if (cellValue.Length < length)
-            {
-                for (int i = 0; i < length - cellValue.Length; i++)
-                {
+            if (cellValue.Length < length) {
+                for (int i = 0; i < length - cellValue.Length; i++) {
                     result += " ";
                 }
             }

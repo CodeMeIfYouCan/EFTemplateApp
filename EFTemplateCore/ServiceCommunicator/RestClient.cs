@@ -3,6 +3,7 @@ using EFTemplateCore.ServiceLocator;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,28 +21,35 @@ namespace EFTemplateCore.ServiceCommunicator
 
         public T Consume<T>(string path)
         {
-            return Consume<T>(path, "get", null);
+            return Consume<T>(path, "get", null, null);
         }
 
         public string Consume(string path)
         {
-            return Consume(path, "get", null);
+            return Consume(path, "get", null, null);
         }
 
         public T Consume<T>(string path, object request)
         {
-            return Consume<T>(path, "post", request);
+            return Consume<T>(path, "post", request, null);
         }
 
         public string Consume(string path, object request)
         {
-            return Consume(path, "post", null);
+            return Consume(path, "post", null, null);
         }
         public T Consume<T>(string path, string method, object request)
         {
-            string result = Consume(path, method, request);
+            string result = Consume(path, method, request, null);
             return JsonConvert.DeserializeObject<T>(result);
         }
+        public T Consume<T>(string path, string method, object request, Dictionary<string, string> headerItems)
+        {
+            string result = Consume(path, method, request, headerItems);
+            return JsonConvert.DeserializeObject<T>(result);
+        }
+
+
         /// <summary>
         /// todo:configure constants to appsettings.json file
         /// compress data???
@@ -50,7 +58,7 @@ namespace EFTemplateCore.ServiceCommunicator
         /// <param name="method"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        public string Consume(string path, string method, object request)
+        public string Consume(string path, string method, object request, Dictionary<string, string> headerItems)
         {
             string response = string.Empty;
             try {
@@ -63,6 +71,11 @@ namespace EFTemplateCore.ServiceCommunicator
                 req.KeepAlive = false;
                 req.Method = method.ToUpper();
                 req.Headers.Add("Content-Encoding", "ISO-8859-9");
+                if (headerItems != null) {
+                    foreach(var item in headerItems) {
+                        req.Headers.Add(item.Key, item.Value);
+                    }
+                }
                 req.Accept = "application/json";
                 req.AutomaticDecompression = DecompressionMethods.GZip;
                 req.Headers[HttpRequestHeader.ContentType] = "application/json;charset=utf-8;language=tr-TR";
@@ -88,6 +101,7 @@ namespace EFTemplateCore.ServiceCommunicator
             }
             catch (Exception ex) {
                 Services.Create<ILog>().LogFormat("RestClient Error! Path:{0},Method:{1},Exception:{2}", LogLevel.Error, path, method, ex);
+                throw;
             }
             return response;
         }

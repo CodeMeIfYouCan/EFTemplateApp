@@ -36,6 +36,7 @@ namespace EFTemplateApp
                 options.Level = CompressionLevel.Fastest;
             });
             DefaultServices.RegisterDefaultServices();
+            //services.AddAuthorization()
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +47,7 @@ namespace EFTemplateApp
             }
             app.UseResponseCompression();
             app.UseMvc();
+           
         }
         ////todo:check if adding logging method into loggerFactory
         //public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

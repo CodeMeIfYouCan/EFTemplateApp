@@ -9,7 +9,7 @@ namespace EFTemplateCore.EFDbConnection
     /// </summary>
     public static class Constants
     {
-        public static readonly string DbConnectionProvider = "DbConnectionProvider";
+        public static readonly string DbConnectionProviderKey = "DbConnectionProvider";
         public static readonly string ConnectionStringsKey = "ConnectionStrings";
         /// <summary>
         /// Used to take other connection properties rather than the connection string.
