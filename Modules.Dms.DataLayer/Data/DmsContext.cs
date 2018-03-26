@@ -30,6 +30,11 @@ namespace Modules.Dms.DataLayer
     {
         public DbSet<Document> Documents { get; set; } // Document
 
+        public DmsContext (ConnectionType contextType, string connectionName)
+            : base(contextType, connectionName)
+        {
+        }
+
         public DmsContext()
         {
             InitializePartial();

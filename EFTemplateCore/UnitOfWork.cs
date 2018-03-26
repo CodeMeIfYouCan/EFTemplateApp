@@ -12,7 +12,7 @@ namespace EFTemplateCore
     public abstract class UnitOfWork<TContext> : IUnitOfWork<TContext>, IBaseUnitOfWork where TContext : EFContext, new()
     {
         protected readonly TContext context;
-        private bool disposed = false;
+        private bool disposed = false; 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
@@ -25,6 +25,18 @@ namespace EFTemplateCore
         public UnitOfWork(string connectionName)
         {
             context = (TContext)Activator.CreateInstance(typeof(TContext), connectionName);
+        }
+
+        public UnitOfWork(ConnectionType connectionType, string connectionName)
+        {
+            if (connectionType == ConnectionType.DatabaseConnection)
+            {
+                context = (TContext)Activator.CreateInstance(typeof(TContext), connectionName);
+            }
+            else if(connectionType == ConnectionType.InMemoryDatabaseConnection)
+            {
+                context = (TContext)Activator.CreateInstance(typeof(TContext), connectionType, connectionName);
+            }
         }
 
         /// <summary>

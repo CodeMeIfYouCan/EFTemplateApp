@@ -35,8 +35,10 @@ namespace Modules.Dms.DataLayer
             builder.Property(x => x.Id).HasColumnName(@"Id").HasColumnType("bigint").IsRequired().ValueGeneratedOnAdd();
             builder.Property(x => x.Name).HasColumnType("nvarchar(200)").HasMaxLength(200);
             builder.Property(x => x.Path).HasColumnType("nvarchar(250)").HasMaxLength(250);
-            builder.Property(x => x.CreateDate).HasColumnName(@"CreateDate").HasColumnType("date");
-            builder.Property(x => x.UserName).HasColumnType("nvarchar(50)").HasMaxLength(50);
+            builder.Property(x => x.UploadDate).HasColumnName(@"UploadDate").HasColumnType("datetime");
+            builder.Property(x => x.UploadUserName).HasColumnType("nvarchar(50)").HasMaxLength(50);
+            builder.Property(x => x.LastAccessedDate).HasColumnName(@"LastAccessedDate").HasColumnType("datetime");
+            builder.Property(x => x.FileSize).HasColumnName(@"FileSize").HasColumnType("bigint");
 
 
 

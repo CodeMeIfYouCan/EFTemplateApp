@@ -33,7 +33,8 @@ namespace EFTemplateCore.TransactionManager
             }
             finally 
             {
-                unitOfWork.Dispose();
+                //todo:Burada dispose yapıldığında unitofwork başka işlemler tarafından kullanılamıyor. Ardışık işlemler için bir çözüm bulunmalı.
+                //unitOfWork.Dispose();
                 Services.Create<ILog>().LogFormat("Transaction Execution is completed!", LogLevel.Debug);
             }
         }

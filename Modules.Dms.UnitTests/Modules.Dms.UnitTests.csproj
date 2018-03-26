@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+    <ProjectReference Include="..\Modules.Dms.BusinessLogic\Modules.Dms.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Modules.Dms.DataLayer\Modules.Dms.DataLayer.csproj" />
+    <ProjectReference Include="..\Modules.Dms.Service\Modules.Dms.Service.csproj" />
+    <ProjectReference Include="..\Modules.Dms.ViewModels\Modules.Dms.ViewModels.csproj" />
+  </ItemGroup>
 
 </Project>

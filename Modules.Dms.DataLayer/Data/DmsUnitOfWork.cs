@@ -37,6 +37,11 @@ namespace Modules.Dms.DataLayer
         {
         }
 
+		public DmsUnitOfWork(ConnectionType connectionType, string connectionName)
+            : base(connectionType, connectionName)
+        {
+        }
+
 	    public DmsUnitOfWork(DbTransaction existingTransaction)
 	    :base(existingTransaction)
         {

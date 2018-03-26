@@ -37,6 +37,11 @@ namespace Modules.NorthWind.DataLayer
         {
         }
 
+		public NorthWindUnitOfWork(ConnectionType connectionType, string connectionName)
+            : base(connectionType, connectionName)
+        {
+        }
+
 	    public NorthWindUnitOfWork(DbTransaction existingTransaction)
 	    :base(existingTransaction)
         {

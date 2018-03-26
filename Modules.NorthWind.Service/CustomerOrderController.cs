@@ -29,13 +29,13 @@ namespace Modules.NorthWind.Service
         [HttpPost("[action]")]
         public IActionResult GetCustomerOrderDetail(CustomerOrderDetailRequest request,[FromHeader] object obj)
         {
-            try {
-                credentialValidator.CheckCredentials(this.Request.Headers);
-            }
-            catch (Exception ex) {
-                Services.Create<ILog>().LogFormat("Unauthorized request.Exception:{0}", LogLevel.Warning, ex);
-                return Unauthorized();
-            }
+            //try {
+            //    credentialValidator.CheckCredentials(this.Request.Headers);
+            //}
+            //catch (Exception ex) {
+            //    Services.Create<ILog>().LogFormat("Unauthorized request.Exception:{0}", LogLevel.Warning, ex);
+            //    return Unauthorized();
+            //}
 
             CustomerOrderDetailResponse response = orderOperations.GetCustomerOrderDetails(request);
             if (response == null)

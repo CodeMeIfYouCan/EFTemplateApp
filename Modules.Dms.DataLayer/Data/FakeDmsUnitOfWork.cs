@@ -23,32 +23,12 @@ namespace Modules.Dms.DataLayer
     using System.Data.Common;
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    // Document
-    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.34.1.0")]
-    public partial class Document : IEntity
-    {
-        public long Id { get; set; } // Id (Primary key)
-        public string Name { get; set; } // Name (length: 200)
-        public string Path { get; set; } // Path (length: 250)
-        public System.DateTime? UploadDate { get; set; } // UploadDate
-        public string UploadUserName { get; set; } // UploadUserName (length: 50)
-        public System.DateTime? LastAccessedDate { get; set; } // LastAccessedDate
-        public long? FileSize { get; set; } // FileSize
-
-//TODO: Deleted relational properties
-
-//TODO: Deleted foreign key rows from here
-
-
-        public Document()
-        {
-            UploadDate = System.DateTime.Now;
-//TODO: Deleted relational property creation rows.
-            InitializePartial();
-        }
-
-        partial void InitializePartial();
-    }
-
+	public static class FakeDmsUnitOfWork
+	{
+		public static DmsUnitOfWork Get()
+		{
+			return new DmsUnitOfWork(ConnectionType.InMemoryDatabaseConnection, "DmsFakeDb");
+		}
+	}
 }
 // </auto-generated>

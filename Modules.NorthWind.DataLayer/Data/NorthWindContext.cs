@@ -55,6 +55,11 @@ namespace Modules.NorthWind.DataLayer
         public DbSet<Supplier> Suppliers { get; set; } // Suppliers
         public DbSet<Territory> Territories { get; set; } // Territories
 
+        public NorthWindContext (ConnectionType contextType, string connectionName)
+            : base(contextType, connectionName)
+        {
+        }
+
         public NorthWindContext()
         {
             InitializePartial();

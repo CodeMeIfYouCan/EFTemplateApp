@@ -22,7 +22,9 @@
   <ItemGroup>
     <ProjectReference Include="..\EFTemplateCore.UnitTests\EFTemplateCore.UnitTests.csproj" />
     <ProjectReference Include="..\EFTemplateCore\EFTemplateCore.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.BusinessLogic\Modules.NorthWind.BusinessLogic.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.DataLayer\Modules.NorthWind.DataLayer.csproj" />
+    <ProjectReference Include="..\Modules.NorthWind.Service\Modules.NorthWind.Service.csproj" />
     <ProjectReference Include="..\Modules.NorthWind.ViewModels\Modules.NorthWind.ViewModels.csproj" />
   </ItemGroup>
 
