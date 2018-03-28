@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Modules.NorthWind.BusinessLogic.Transactions;
 using Modules.NorthWind.DataLayer;
-using Modules.NorthWind.DataLayer.Data.Interfaces;
 using Modules.NorthWind.ViewModels.Request;
 using Modules.NorthWind.ViewModels.Response;
 

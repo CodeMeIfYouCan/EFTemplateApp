@@ -32,4 +32,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Repositories\Custom\" />
+  </ItemGroup>
+
 </Project>

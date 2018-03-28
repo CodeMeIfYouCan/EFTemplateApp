@@ -5,9 +5,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modules.Dms.DataLayer;
-using Modules.Dms.DataLayer.Data.Interfaces;
 using Modules.NorthWind.DataLayer;
-using Modules.NorthWind.DataLayer.Data.Interfaces;
 using System.IO.Compression;
 using System.Linq;
 

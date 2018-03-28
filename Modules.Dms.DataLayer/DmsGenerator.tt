@@ -49,7 +49,7 @@
     Settings.IncludeQueryTraceOn9481Flag = false; // If SqlServer 2014 appears frozen / take a long time when this file is saved, try setting this to true (you will also need elevated privileges).
     Settings.IncludeCodeGeneratedAttribute = true; // If true, will include the GeneratedCode attribute, false to remove it.
     Settings.UsePrivateSetterForComputedColumns = true; // If the columns is computed, use a private setter.
-    Settings.AdditionalNamespaces = new[] { "Modules.Dms.DataLayer.Domain", "EFTemplateCore.Interfaces", "Modules.Dms.DataLayer.Domain.Enums","Modules.Dms.DataLayer.Data.Interfaces", "EFTemplateCore", "System.Data.Common","Modules.Dms.DataLayer.Data" };  // To include extra namespaces, include them here. i.e. "Microsoft.AspNet.Identity.EntityFramework"
+    Settings.AdditionalNamespaces = new[] { "Modules.Dms.DataLayer.Domain", "EFTemplateCore.Interfaces", "Modules.Dms.DataLayer.Domain.Enums", "EFTemplateCore", "System.Data.Common" };  // To include extra namespaces, include them here. i.e. "Microsoft.AspNet.Identity.EntityFramework"
     Settings.AdditionalContextInterfaceItems = new[] // To include extra db context interface items, include them here. Also set MakeClassesPartial=true, and implement the partial DbContext class functions.
     {
         ""  //  example: "void SetAutoDetectChangesEnabled(bool flag);"
@@ -132,7 +132,7 @@
     //      PocoConfigurationNamespace = "YourProject.Maps";
     // You also need to set the following to the namespace where they now live:
     Settings.PocoNamespace = "Modules.Dms.DataLayer.Domain";
-    Settings.ContextNamespace = "Modules.Dms.DataLayer.Data";
+    Settings.ContextNamespace = "Modules.Dms.DataLayer";
     Settings.UnitOfWorkNamespace = "Modules.Dms.DataLayer.Interfaces";
     Settings.PocoConfigurationNamespace = "Modules.Dms.DataLayer.Configuration";
 

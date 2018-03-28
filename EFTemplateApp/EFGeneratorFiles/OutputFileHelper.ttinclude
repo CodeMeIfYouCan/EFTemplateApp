@@ -18,8 +18,11 @@ class Manager {
         public int Start, Length;
         public bool IncludeInDefault;
 		public bool CheckFileExists { get; set; }
+		public bool AddHeaderAndFooterComments { get; set; }
     }
 
+	private readonly string headerComment = "";
+	private readonly string footerComment = "";
     private Block currentBlock;
     private readonly List<Block> files = new List<Block>();
     private readonly Block footer = new Block();
@@ -28,14 +31,22 @@ class Manager {
     private readonly StringBuilder template;
     protected readonly List<String> generatedFileNames = new List<String>();
 
-    public static Manager Create(string path, StringBuilder template) {
-        return new Manager(path, template);
+    public static Manager Create(string path, StringBuilder template, string headerComment, string footerComment) {
+        return new Manager(path, template, headerComment, footerComment);
     }
 
     public void StartNewFile(String name, bool checkFileExists = false) {
         if (name == null)
             throw new ArgumentNullException("name");
 	    CurrentBlock = new Block { Name = name, CheckFileExists = checkFileExists };
+		if(checkFileExists)
+		{
+			CurrentBlock.AddHeaderAndFooterComments = false;
+		}
+		else
+		{
+			CurrentBlock.AddHeaderAndFooterComments = true;
+		}
     }
 
     public void StartFooter(bool includeInDefault = true) {
@@ -68,8 +79,17 @@ class Manager {
             if (!footer.IncludeInDefault)
                 template.Remove(footer.Start, footer.Length);
             foreach(Block block in files) {
-                String fileName = String.Concat(outputPath,"\\", block.Name);				
-                String content = headerText + template.ToString(block.Start, block.Length) + footerText;
+                String fileName = String.Concat(outputPath,"\\", block.Name);	
+				String content ="";
+				if(block.AddHeaderAndFooterComments)
+				{
+					content = headerComment + headerText + template.ToString(block.Start, block.Length) + footerText + footerComment;
+				}
+				else
+				{
+					content = headerText + template.ToString(block.Start, block.Length) + footerText;
+				}
+                
                 generatedFileNames.Add(fileName);
                 CreateFile(fileName, content, block.CheckFileExists);
                 template.Remove(block.Start, block.Length);
@@ -108,9 +128,11 @@ class Manager {
         return !(File.Exists(fileName) && File.ReadAllText(fileName) == newContent);
     }
 
-    private Manager(string path, StringBuilder template) {
+    private Manager(string path, StringBuilder template, string headerComment, string footerComment) {
         this.path = path;
         this.template = template;
+		this.headerComment = headerComment; 
+		this.footerComment = footerComment;
     }
 
     private Block CurrentBlock {

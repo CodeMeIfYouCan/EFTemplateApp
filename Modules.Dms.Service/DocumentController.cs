@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Modules.Dms.BusinessLogic.Queries;
 using Modules.Dms.BusinessLogic.Transactions;
 using Modules.Dms.DataLayer;
-using Modules.Dms.DataLayer.Data.Interfaces;
 using Modules.Dms.ViewModels.Request;
 using Modules.Dms.ViewModels.Response;
 

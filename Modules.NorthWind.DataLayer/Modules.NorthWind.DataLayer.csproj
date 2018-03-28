@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Configuration\" />
-    <Folder Include="Data\Repositories\" />
     <Folder Include="Data\Sql\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Interfaces\Repositories\" />
